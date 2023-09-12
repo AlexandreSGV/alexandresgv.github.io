@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Guidelines for Data Stream Processing Applications</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style type="text/css">
+ 
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header-title {
+    background-color: #FFEB3B; /* um amarelo confortável */
+    color: #000; /* preto */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.header-description {
+    background-color: #000; /* preto */
+    color: #FFF; /* branco */
+    padding: 10px;
+    border-radius: 5px;}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+
+</style>
+
+<body>
+
+    <div class="container">
+
+        <header class="text-center my-5">
+            <h1 class="header-title">Testing Guidelines for Data Stream Processing Applications</h1>
+            <p class="header-description">This guide is designed to assist professionals in planning testing of Data Stream Processing (DSP) applications. The insights will guide your decision-making and help shape testing strategies for your context. Discuss, adapt and apply these suggestions to best suit your needs and encourage fruitful discussions within your team. This compact version provides a quick and user-friendly reference to the most crucial points. For detailed information, refer to the full version.
+        </p>
+        </header>
+
+        <main>
+
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
+                    <section class="guideline" id="G1">
+                        <h2><a href="javascript:void(0);" class="expand-link" data-target="G1-detail">#G1 - COLLECT INFORMATION</a></h2>
+                        <p> This guideline emphasizes the importance of collecting pertinent information for tests at the beginning of the project, such as comprehending the project’s business context, determining parameters needed for test preparation, anticipating adverse conditions and fault tolerance scenarios, and generating technical documentation.</p>
+                        
+
+
+
+             
+                        <div class="details" id="G1-detail" style="display: none;">
+                            <img src="img/data-collection.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            <ol type="A" fontWeight="bold">
+                                <li><b>Understand the application context:</b> In the planning phase, get a solid understanding of your project’s business context. Identify relevant characteristics that can guide your testing decisions. This could include determining the desired testing objectives and quality characteristics.</li>
+                                <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test prepa- ration, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
+                                <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
+                                <li><b>Document your process:</b> Create technical documents, like UML activity, sequence, and state machine diagrams, to express the inherent characteristics of DSP. This might include details about concurrency and operation states.</li>
+                            </ol>
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                        </div>
+
+                        
+                    </section>
+
+                    <!-- ... Repeat the structure for all guidelines ... -->
+
+                    <section class="guideline" id="G7">
+                        <h2><a href="javascript:void(0);" class="expand-link" data-target="G7-detail">#G7 Title of Guideline 7</a></h2>
+                        <p>Short description or principle of the guideline.</p>
+                        <div class="details" id="G7-detail" style="display: none;">
+                            <h3>Detailed Explanation</h3>
+                            <p>Longer description, examples, and illustrations.</p>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-5">
+            <p>&copy; Written by Alexandre Vianna and Kiev Gama.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let links = document.querySelectorAll('.expand-link');
+
+        links.forEach(function(link) {
+            link.addEventListener('click', function() {
+                let targetId = this.getAttribute('data-target');
+                let targetElement = document.getElementById(targetId);
+
+                if(targetElement.style.display === "none") {
+                    targetElement.style.display = "block";
+                } else {
+                    targetElement.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
