@@ -33,6 +33,61 @@ ol > li::marker {
 }
 
 
+ .boxed-content {
+        background-color: white;
+        border: 2px dashed darkblue;
+        border-radius: 10px;
+        padding: 1px;
+        margin: 20px 0;
+    }
+
+    .boxed-content i {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .boxed-title {
+        background-color: darkblue;
+        color: white;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-weight: bold;
+        font-size: 15pt;
+        text-align: center;
+        margin: 0;
+        border-bottom: none;
+    }
+
+    
+
+/*.guideline-prefix {
+        display: inline-flex;
+        align-items: center;   /* Alinha verticalmente ao centro */
+        justify-content: center;   /* Alinha horizontalmente ao centro */
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 4px solid green;
+        color: green;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .expand-link {
+        /*color: green;*/
+        /*text-decoration: underline;  /* Adiciona sublinhado */*/
+        text-decoration: none;  /* Adiciona sublinhado */
+        vertical-align: middle; /* Para alinhar com o centro vertical do círculo */
+    }
+
+    .expand-link:hover {
+        text-decoration: underline;
+    }*/
+
+
+
+
 </style>
 
 <body>
@@ -51,36 +106,300 @@ ol > li::marker {
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 
                     <section class="guideline" id="G1">
-                        <h2><a href="javascript:void(0);" class="expand-link" data-target="G1-detail">#G1 - COLLECT INFORMATION</a></h2>
+                        <h2 >
+                            <span class="guideline-prefix">#G1</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G1-detail" >- COLLECT INFORMATION</a>
+                        </h2>
+
+                        <img src="img/data-collection.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                         <p> This guideline emphasizes the importance of collecting pertinent information for tests at the beginning of the project, such as comprehending the project’s business context, determining parameters needed for test preparation, anticipating adverse conditions and fault tolerance scenarios, and generating technical documentation.</p>
                         
-
-
-
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
              
                         <div class="details" id="G1-detail" style="display: none;">
-                            <img src="img/data-collection.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            
                             <ol type="A" fontWeight="bold">
                                 <li><b>Understand the application context:</b> In the planning phase, get a solid understanding of your project’s business context. Identify relevant characteristics that can guide your testing decisions. This could include determining the desired testing objectives and quality characteristics.</li>
-                                <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test prepa- ration, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
+                                <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test preparation, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
                                 <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
                                 <li><b>Document your process:</b> Create technical documents, like UML activity, sequence, and state machine diagrams, to express the inherent characteristics of DSP. This might include details about concurrency and operation states.</li>
                             </ol>
-                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                            
+
+
                         </div>
 
                         
                     </section>
+<section class="guideline" id="G2">
+                        <h2>
+                            <span class="guideline-prefix">#G2</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G2-detail" >- ESTABLISH TEST OBJECTIVES</a>
+                        </h2>
 
-                    <!-- ... Repeat the structure for all guidelines ... -->
+                        <img src="img/goal.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                        <p> For effective test strategy planning and resource allocation, clear testing objectives are vital. Guideline #G2 offers recommendations for setting these objectives. Each application's unique features dictate specific quality requirements. It's crucial to align these characteristics with desired quality standards, emphasizing the importance of understanding quality from the business perspective.</p>
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
-                    <section class="guideline" id="G7">
-                        <h2><a href="javascript:void(0);" class="expand-link" data-target="G7-detail">#G7 Title of Guideline 7</a></h2>
-                        <p>Short description or principle of the guideline.</p>
-                        <div class="details" id="G7-detail" style="display: none;">
-                            <h3>Detailed Explanation</h3>
-                            <p>Longer description, examples, and illustrations.</p>
+             
+                        <div class="details" id="G2-detail" style="display: none;">
+                            <img src="img/discussion.png" alt="Descrição da imagem" style="float: right; margin-left: 40px; width: 128px; height: 128px;">
+                            <ol type="A" fontWeight="bold">
+                                
+
+
+
+                                <li><b>Evaluate software quality requirements</b> concerning the application’s characteristics. Discuss with stakeholders the series of questions to prioritise testing objectives according to quality categories: functional suitability, performance efficiency, reliability and maintainability </li>
+                                <li><b>Comprehend quality from the perspective of the business</b> involved in the application.</li>
+                                <li><b>Engage in process stakeholders</b>—business analysts, developers, testers, clients, and users.</li>
+                            </ol>
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                            <div class="boxed-content">
+                            <div class="boxed-title">Guiding questions to establish test objectives</div>
+                            <div style="margin-right: 10px; margin-left: 10px;">
+                            <b>FUNCTIONAL SUITABILITY</b>
+                            <i style="text-decoration: underline;">Q-A How critical is the correctness of the results delivered by the application?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b>Metrics: </b>Define and establish metrics for assessing the correctness of the application's output.</li>
+                                <li> <b> Prioritisation: </b>Rank the application's features based on the importance and criticality of their correctness. This ranking will guide test planning and ensure that the most crucial features receive proper attention.</li>
+                                <li> <b> System-level Testing: </b>Pay special attention to system-level tests that involve all integrated modules, dependencies, and services. In DSP applications, various system-level factors, such as concurrency, asynchrony, latency, glitches, node crashes, out-of-order, lost, and duplicate messages, can impact the correctness of results.</li>
+                            </ol>
+
+
+                            <i style="text-decoration: underline;">Q-B How critical is the accuracy of results that the application must present?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Metrics: </b>Establish metrics and acceptable thresholds for the accuracy of results. In some DSP application contexts, data may be subject to fluctuations (e.g., sensor data or geo-location) and some degree of variation in result accuracy may be acceptable in others not.</li>
+                                <li> <b> Non-Determinism: </b>Acknowledge that non-determinism in DSP can affect results accuracy. #G7-B brings recommendations to face this issue, such as establishing acceptable thresholds for result variations in the test oracle, conducting multiple test executions observed for functionalities impacted by variations in results, applying statistical analysis techniques to determine if the variations of the results are acceptable, and others (check details in the non-determinism strategies in #G7.</li>
+                                <li> <b> Monitoring: </b>Use application monitoring tools, such as Grafana, to gather result accuracy metrics and facilitate the analysis of the application's performance.</li>
+                            </ol>
+
+                            <b>PERFORMANCE EFFICIENCY</b>
+
+                            <i style="text-decoration: underline;">Q-C How critical are the time requirements (e.g., delay, response time)?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Parameters: </b>Identify the relevant time parameters for the application context and specify thresholds for these parameters based o business requirements.</li>
+                                <li> <b> Clock Control: </b>Manage the application's clock in test environments, as specialised time handling is required for testing purposes.</li>
+                                <li> <b> Simulate real-world: </b>Time factors are vulnerable in real-world conditions, such as network latency, hardware overhead, and communication overhead with third-party services. Thus, the test environment should closely simulate the production environment conditions.</li>
+                                <li> <b> DSP Frameworks: </b>Typically, DSP frameworks provide control functions and interfaces in their test utilities to address time-related issues, such as clock simulation and manipulation of processing time and watermarks. Consider these aspects when selecting DSP frameworks.</li>
+                                <li> <b> Detailed Recommendations: </b>Check details recommendations regarding time issues in #G7.</li>
+                            </ol>
+
+
+                            <i style="text-decoration: underline;">Q-D What is the importance of meeting the requirements of quantities and types of resources the application utilises when performing its functions?</i>
+
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Resource Estimation: </b>Estimate the available resources for running the application in production (e.g., memory, CPU, server instances, and pay-per-use services).</li>
+                                <li> <b> Network Considerations: </b>Consider the network resources and characteristics required to run the application, such as latency, throughput, and bandwidth.</li>
+                                <li> <b> Testing: </b>Conduct system and infrastructure-level testing using resources allocated for the production environment. Employ monitoring tools to evaluate whether the application operates as expected with the estimated resources.</li>
+                                <li> <b> Monitoring: </b>Utilise hardware resource monitoring tools such as Zabbix, Paessler PRTG (network-focused), Nagios, New Relic (cloud-based monitoring), and Intel Platform Analysis Technology (dedicated hardware monitoring).</li>
+                            </ol>
+                            <i style="text-decoration: underline;">Q-E How critical is efficient resource usage?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Scaling Strategy: </b>For efficient resource utilisation, strategise dynamic hardware scaling, which is essential in DSP infrastructures that frequently rely on elastic cloud services with variable, demand-proportionate costs.</li>
+                                <li> <b> Testing Scenarios: </b>Establish diverse scenarios involving hardware resource usage (i.e., low, medium, and high demand). Conduct tests to optimise settings for each scenario.</li>
+                                <li> <b> Code Optimisation: </b>Efficient resource usage may also involve optimising application code. Perform tests at all levels to identify resource-intensive operations and optimise them. </li>
+                                <li> <b> Profiling: </b>Use built-in DSP platform features to monitor metrics, track consumer lag, and log requests.</li>
+                            </ol>
+
+
+                            <i style="text-decoration: underline;">Q-F How important is it for the application to meet its maximum capacity limits?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Parameters: </b>Define parameters and characterise the application's operation at maximum capacity. Determine the frequency and duration of maximum capacity exposure.</li>
+                                <li> <b> Stress Test Scenarios: </b>Create maximum stress scenarios and execute stress tests.</li>
+                                <li> <b> Monitoring: </b>Use tools to monitor application performance and hardware resource usage during testing.</li>
+                            </ol>
+
+
+
+
+                            <b>RELIABILITY</b>
+
+                            <i style="text-decoration: underline;">Q-G How significant is the application's reliability during regular operation?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Reliability Parameters: </b>Establish parameters to measure application reliability during regular operation.</li>
+                                <li> <b> Defining Standards: </b>Specify what constitutes acceptable and unacceptable situations or issues during regular operation.</li>
+                                <li> <b> System-Level Testing: </b>Conduct system-level testing that simulates regular operating conditions to verify compliance with reliability parameters.</li>
+                            </ol>
+
+                            <i style="text-decoration: underline;">Q-H What is the priority level for the operational availability of the application?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Availability Metrics: </b>Determine the required application availability rates. Specify the acceptable frequency and maximum duration of interruptions.</li>
+                                <li> <b> Fault Tolerance Tests: </b>Perform fault tolerance tests in order to verify the application's availability under various scenarios. </li>
+                                <li> <b> Mitigation Strategies: </b>Identify the causes of application unavailability to propose effective mitigation strategies. For instance, failures in third-party services can result in application unavailability, so preparing a backup service is recommended.</li>
+                            </ol>
+
+                            <i style="text-decoration: underline;">Q-I How critical is the application's resilience to adverse conditions, such as hardware or software failures, network oscillation, and sudden increase in data volume?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Adverse Conditions Definition: </b>Detail adverse conditions and clarify whether the application can function with limited capabilities under such scenarios, specifying which functionalities would continue or stop.</li>
+                                <li> <b> Performance degradation approach: </b>Specify if the application's performance might deteriorate under adverse conditions and delineate the potential extent of this degradation.</li>
+                                <li> <b> Fault Tolerance Testing: </b>Conduct fault tolerance testing to identify scenarios of adverse conditions where the application can still perform as required.</li>
+                                <li> <b> Chaos Engineering: </b>Employ chaos engineering in testing to assess application robustness, using an experimental setup to simulate failures like network degradation, node crashes, third-party service outages, and reduced computational resources.</li>
+                            </ol>
+
+                            <i style="text-decoration: underline;">Q-J What is the priority level for the application to recover affected data and restore the desired system state in the event of an interruption or failure?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Interruption Scenarios: </b>Characterise potential service interruption scenarios. Specify the recovery time from outages and whether data from the outage period can be discarded or requires further processing.</li>
+                                <li> <b> Recovery Plan: </b>Establish a disaster recovery plan and processes to promptly reestablish application services.</li>
+                                <li> <b> Fault Tolerance Testing: </b>Perform fault-tolerance tests to verify autonomous recovery mechanisms and application and data integrity following recovery.</li>
+                            </ol>
+
+
+                            <b>MAINTAINABILITY</b>
+
+
+                            <i style="text-decoration: underline;">Q-K What is the priority for evolving the application without introducing defects or degrading quality?</i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Evolution Plans: </b>Establish application evolution plans. This includes outlining future functionalities, changes in performance needs, and data volume growth. </li>
+                                <li> <b> Regression Testing: </b>Before deploying new releases, perform regression testing for result correctness and potential performance degradation. This process requires automation, skilled personnel, time, and funding. </li>
+                                <li> <b> Contracts Integrity Tests: </b>Conduct thorough tests to confirm the integrity of message contracts, as schema changes frequently trigger regression failures.</li>
+                            </ol>
+
+                            <i style="text-decoration: underline;">Q-L What is the priority for minimising maintenance efforts during application evolution, considering resources for tests and the workload of developers/testers? </i>
+                            <ol type="1" fontWeight="bold">
+                                <li> <b> Test Automation: </b>Automating tests can significantly reduce the workload on developers/testers while ensuring consistency and extensive coverage in testing, hence minimising maintenance efforts.</li>
+                                <li> <b> CI/CD Pipeline: </b>Implementing a continuous integration and delivery pipeline to catch bugs and errors early in the development process, minimising maintenance efforts.</li>
+                                <li> <b> Test Case Maintenance: </b>Consider maintaining automatic test cases, as constant changes in application scenarios require regular refactoring. Focus on automating tests for stable components and avoid creating excessive test cases during project maturation to prevent unnecessary effort wastage.</li>
+                            </ol>
                         </div>
+                            </div>
+                        </div>
+
+                        
+                    </section>
+                    <section class="guideline" id="G3">
+                        <h2 >
+                            <span class="guideline-prefix">#G3</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G3-detail" >- SYNC TEAM SKILLS WITH TESTING STRATEGY</a>
+                        </h2>
+                        <img src="img/requirements.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                        <p> Considering the relevance of professionals’ skills on test quality within the DSP context, Guideline #G3 focuses on human resource planning. It is essential to ensure that the right individuals are involved in testing and have the necessary skills and expertise to execute the planned testing activities</p>
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+
+                        <div class="details" id="G3-detail" style="display: none;">
+                            
+                            <ol type="A" fontWeight="bold">
+                                <li><b>Skill Sets:</b> Ensure that the testing activities align with the skills of the testing team.</li>
+                                <li><b>Training:</b> If necessary, consider providing training and development opportunities to enhance the test team’s skills.</li>
+                                <li><b>Workload:</b> Consider the available workload when determining the number and type of test tasks that can be assigned. </li>
+                            </ol>
+                            
+                        </div>
+
+
+
+
+                        
+                    </section>
+                    <section class="guideline" id="G4">
+                        <h2 >
+                            <span class="guideline-prefix">#G4</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G4-detail" >- TIME ALLOCATION PLANNING</a>
+                        </h2> 
+                        <img src="img/scheduling.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                        <p> Time pressure can significantly hinder testing activities. This pressure can lead to teams rushing, compressing, or even sacrificing crucial activities due to a shrinking timeframe. Therefore, the careful planning and optimisation of time resources become pivotal to prevent delays, relieve time pressure, and avoid contractual breaking. Guideline #G4 provides recommendations for planning and allocating time resources.</p> 
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                        <div class="details" id="G4-detail" style="display: none;">
+                            
+                            <ol type="A" fontWeight="bold">
+                                <li><b> Allocate time in the project schedule for critical activities</b>, including the development of test cases, configuration of environments, creation of test datasets, execution of tests, and analysis of results.   </li>
+                                <li><b> Consider the complexity of the activity, the time required for test execution,</b> and the number of test cases involved when estimating the time required for each testing activity.   </li>
+                                <li><b> Prioritise activities based on test objectives </b> and project characteristics, as detailed in Guideline #G2. </li>
+                                <li><b> Develop the testing schedule by considering the priority and estimated time required for each testing activity,</b> the available time in the schedule, and the feasible workload.   </li>
+                                <li><b>  Employ automated test case generation techniques,</b> such as property-based tests, to get many basic test cases quickly. </li>
+                                <li><b> Gradually initiate the automation of the testing infrastructure as the application gains stability,</b> prioritising the most time-consuming activities.   </li>
+                            </ol>
+                            
+
+                        </div>
+
+
+
+
+
+
+
+
+                        
+                    </section>
+                    <section class="guideline" id="G5">
+                        <h2 >
+                            <span class="guideline-prefix">#G5</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G5-detail" >- PLAN FINANCIAL RESOURCE ALLOCATION</a>
+                        </h2>
+                         <img src="img/budget.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                        <p> Financial resources are vital for testing DSP applications. They are essential for several testing activities, such as hiring hardware, outsourcing services, professional training, consultancy, acquiring software and tools, and maintaining the test infrastructure. Therefore, it is a precaution to anticipate allocating financial resources in advance to ensure sufficient resources for the highest-priority testing activities. </p> 
+                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                        <div class="details" id="G5-detail" style="display: none;">
+                           
+                            <ol type="A" fontWeight="bold">
+                                <li><b>Test Objectives Alignment: </b> Ensure that the allocation of financial resources aligns with the testing objectives outlined in Guideline #G2, and then prioritise investments that drive the most significant impact on achieving these objectives.</li>
+                                <li><b>Comprehensive Costing: </b> Account for all potential costs related to the testing process, includ- ing infrastructure (hardware, cloud services), personnel (in-house tester salaries, training fees), consultancy contracts, contracting of services and tools (e.g., test frameworks and third-party services used in tests), and the ongoing maintenance and evolution of the testing infrastructure.</li>
+                                <li><b>Cost-Reduction Strategies: </b> Implement strategies to minimise costs, consider strategies such as infrastructure automation, optimising the use of on-demand paid hardware resources, employing open-source tools, and utilising mock infrastructure and services. Evaluate the cost-effectiveness of cost-reduction strategies against test efficacy.</li>
+                            </ol>
+                           
+
+                        </div>
+
+                        
+                    </section>
+                    <section class="guideline" id="G6">
+                        <h2 >
+                            <span class="guideline-prefix">#G6</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G6-detail" >-  DEVELOP A TEST DATA STRATEGY</a>
+                        </h2>
+                         <img src="img/data-server.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                        <p> Test data should effectively identify application defects, confirm feature functionality as intended, and ensure compliance with non-functional requirements. This guideline highlights the primary sources of test data and provides insights and recommendations to assist in developing a test data set. Additionally, a summary of data quality characteristics relevant to the DSP application testing is provided. 
+</p> 
+
+                        <div class="details" id="G6-detail" style="display: none;">
+                            
+                            <ol type="A" fontWeight="bold">
+                                <li><b>Consider ISO/IEC 25012 data quality attributes to assess your test data set:</b> Accuracy, Credibility, Currentness, Compliance and Confidentiality. (check Section 5.1 for detailed descriptions)</li>
+                                    
+                                <li><b>Combine diverse test data sources and generation techniques</b> to enhance data variety and mitigate potential biases associated with individual techniques.</li>
+
+                                <li><b>Do not over-rely on historical data,</b> as its effectiveness might be limited due to many never manifested defects in production. Historical data's currentness may also be compromised, as it does not exercise new features and could become incompatible with future application versions.</li>
+
+                                <li><b>Improve historical data efficiency by utilizing semi-synthetic data generation strategies</b> such as mutation, machine learning and manual customization. Check Section \ref{sec:semisyn_data} for details.</li>
+
+                                <li><b>Maintain vigilance over the data schema,</b> and utilize tools such as Avro for version management and compatibility, to minimize issues throughout the schema's evolution.</li>
+                                    
+                                <li><b>Adhere to privacy regulations,</b> such as GDPR, during test data handling to prevent legal issues. Utilize approaches like machine learning and shadow mode running to safeguard confidential information when mirroring production data, as outlined in Section \ref{sec:mirroring}.</li>
+                                    
+                                <li><b>The property-based data generation is a cost-effective approach,</b> as it is fast and easy to apply, making it suitable when time and resources for generating test data are limited.</li>
+
+                                <li><b>High-quality documentation is a valuable asset when real data is unavailable.</b> Natural language processing algorithms can be employed to extract information from documentation to supply automatic approaches with relevant parameters, generating more accurate synthetic data.</li>
+                            </ol>
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                        </div>
+
+                        
+                    </section>
+                    <section class="guideline" id="G7">
+                        <h2 >
+                            <span class="guideline-prefix">#G7</span>
+                            <a href="javascript:void(0);" class="expand-link" data-target="G7-detail" >- BE AWARE OF PARTICULAR ISSUES IN DATA STREAM PROCESSING APPLICATION TESTING</a>
+                        </h2> 
+                        <img src="img/data-server.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                        <p> DSP applications have specific characteristics that must be considered during test planning and execution. This guideline highlights three particular concerns: timing issues (\#G7-A), the non-deterministic nature of distributed DSP (\#G7-B), and fault tolerance (\#G7-C). A brief introduction is given for each concern, followed by relevant observations and recommendations for associated testing strategies.</p> 
+
+                        <div class="details" id="G7-detail" style="display: none;">
+                            
+                            <ol type="A" fontWeight="bold">
+                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. For a more comprehensive discussion on time-related concerns, please refer to Section \ref{sec:time_issues}.</li>
+
+                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting chaos engineering to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Additional information concerning non-determinism matters can be found in Section \ref{sec:nondeterminism}.</li>
+
+
+                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, Chaos Engineering is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Section \ref{sec:fault_tolerance} provides details on fault-tolerance mechanisms.</li>
+                            </ol>
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                        </div>                        
                     </section>
 
                 </div>
