@@ -6,13 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing Guidelines for Data Stream Processing Applications</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    
 </head>
 
 <style type="text/css">
  
+:root {
+    --g1-light: #94ce79;
+    --g1-dark: #38761d;
+
+    --g2-light: #2f5ba3;
+    --g2-dark: #003e75;
+
+    --g3-light: #CBAE88;
+    --g3-dark: #634028;
+
+    --g4-light: #F0E65F;
+    --g4-dark: #A48200;
+
+    --g5-light: #F1C278;
+    --g5-dark: #F76C00;
+
+    --g6-light: #a64d79;
+    --g6-dark: #7f395b;
+
+    --g7-light: #d66666;
+    --g7-dark: #990000;
+
+    --example-light: #d66666;
+    --example-dark: #4f4f4f;
+    
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
+}
+
+section{
+    margin-bottom: 30px;
 }
 
 .header-title {
@@ -33,52 +73,220 @@ ol > li::marker {
 }
 
 
- .boxed-content {
+    .boxed-content {
         background-color: white;
-        border: 2px dashed darkblue;
         border-radius: 10px;
         padding: 1px;
         margin: 20px 0;
+
     }
 
+
+
+    .inbox-content-g2 {
+        padding: 10px;
+        border: 2px dashed var(--g2-dark);
+    }
+
+    .inbox-content-g6 {
+        padding-top: 5px;
+        border: 2px dashed var(--g6-light);
+    }
+
+    .inbox-content-g7 {
+        padding-top: 5px;
+        border: 2px dashed var(--g7-dark);
+    }
+
+    
     .boxed-content i {
         display: block;
         margin-bottom: 10px;
     }
 
     .boxed-title {
-        background-color: darkblue;
+
         color: white;
-        padding: 10px;
+        padding: 2px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         font-weight: bold;
-        font-size: 15pt;
+        font-size: 18pt;
         text-align: center;
         margin: 0;
         border-bottom: none;
+        display: inline-flex;
+        width: 100%;
+        box-sizing: border-box;  /* Certifica-se de que paddings ou bordas não aumentem a largura da div */
+
     }
+
+
+
+    .boxed-title-g2 {
+        background-color: var(--g2-light);
+    }
+
+    .boxed-title-g2:hover {
+      background-color: var(--g2-dark);
+      transition: 0.3s;
+    }
+
+
+    .boxed-title-g6 {
+        background-color: var(--g6-light);
+    }
+
+    .boxed-title-g6:hover {
+      background-color: var(--g6-dark);
+      transition: 0.3s;
+    }
+
+    .boxed-title-g7 {
+        background-color: var(--g7-light);
+    }
+
+    .boxed-title-g7:hover {
+      background-color: var(--g7-dark);
+      transition: 0.3s;
+    }
+
 
     
 
-/*.guideline-prefix {
+    .guideline-prefix {
+        font-family: 'Courier New', monospace;
         display: inline-flex;
-        align-items: center;   /* Alinha verticalmente ao centro */
-        justify-content: center;   /* Alinha horizontalmente ao centro */
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        border: 4px solid green;
-        color: green;
+        align-items: center;  
+        justify-content: center;  
+        min-width: 75px;
+        height: 60px;
+        border-radius: 30%;
+        border: 0px;
+        color: white;
         font-weight: bold;
         margin-right: 8px;
     }
 
+    .g1-background-dark{
+        background-color: var(--g1-dark);
+    }
+    .g2-background-dark{
+        background-color: var(--g2-dark);
+    }
+    .g3-background-dark{
+        background-color: var(--g3-dark);
+    }
+    .g4-background-dark{
+        background-color: var(--g4-dark);
+    }
+    .g5-background-dark{
+        background-color: var(--g5-dark);
+    }
+    .g6-background-dark{
+        background-color: var(--g6-dark);
+    }
+    .g7-background-dark{
+        background-color: var(--g7-dark);
+    }
+
+
+    .guideline-title{
+        font-family: 'Courier New', monospace; 
+        font-weight: bolder;   
+        display: flex; 
+        align-items: center;
+    }
+
+    .guideline-title:hover {
+        text-decoration: underline;
+    }
+
+
+    .g1-color-dark{
+        color: var(--g1-dark);
+    }
+    .g2-color-dark{
+        color: var(--g2-dark);
+    }
+    .g3-color-dark{
+        color: var(--g3-dark);
+    }
+    .g4-color-dark{
+        color: var(--g4-dark);
+    }
+    .g5-color-dark{
+        color: var(--g5-dark);
+    }
+    .g6-color-dark{
+        color: var(--g6-dark);
+    }
+    .g7-color-dark{
+        color: var(--g7-dark);
+    }
+
+    .left-border{
+        border-left: 3px solid;
+        padding-left: 10px;
+    }
+
+    .left-border-color-g1{
+        border-left-color: var(--g1-dark);
+    }
+    .left-border-color-g2{
+        border-left-color: var(--g2-dark);
+    }
+    .left-border-color-g3{
+        border-left-color: var(--g3-dark);
+    }
+    .left-border-color-g4{
+        border-left-color: var(--g4-dark);
+    }
+    .left-border-color-g5{
+        border-left-color: var(--g5-dark);
+    }
+    .left-border-color-g6{
+        border-left-color: var(--g6-dark);
+    }
+    .left-border-color-g7{
+        border-left-color: var(--g7-dark);
+    }
+    
+
+
+a.internal-link {
+    color: #007BFF;  /* Cor azul comum para links. */
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: bold; 
+    text-decoration: none; 
+    padding: 2px 0;  /* Espaçamento vertical para melhor legibilidade. */
+    transition: color 0.3s ease;  /* Efeito de transição suave ao mudar a cor no hover. */
+}
+
+a.internal-link:hover, a.internal-link:focus {
+    color: #0056b3;  /* Cor azul mais escura para o efeito hover. */
+    text-decoration: none;  /* Como solicitado, removendo o sublinhado no hover. */
+}
+
+a.tips {
+    color: black;
+    text-decoration: underline;    
+}
+
+a.tips:hover {
+    color: #636363;
+    text-decoration: underline;
+    font-weight: bold;    
+}
+
+
+/*
     .expand-link {
         /*color: green;*/
-        /*text-decoration: underline;  /* Adiciona sublinhado */*/
-        text-decoration: none;  /* Adiciona sublinhado */
-        vertical-align: middle; /* Para alinhar com o centro vertical do círculo */
+        /*text-decoration: underline;  
+        text-decoration: none; 
+        vertical-align: middle;
     }
 
     .expand-link:hover {
@@ -91,6 +299,11 @@ ol > li::marker {
 </style>
 
 <body>
+
+
+
+
+  
 
     <div class="container">
 
@@ -105,14 +318,14 @@ ol > li::marker {
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 
-                    <section class="guideline" id="G1">
-                        <h2 >
-                            <span class="guideline-prefix">#G1</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G1-detail" >- COLLECT INFORMATION</a>
+                    <section class="guideline-section" id="G1">
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g1-color-dark" data-target="G1-detail">
+                            <span class="guideline-prefix g1-background-dark">#G1</span>
+                            <div> COLLECT INFORMATION</div>
                         </h2>
-
+                        <div class="left-border left-border-color-g1">
                         <img src="img/data-collection.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
-                        <p> This guideline emphasizes the importance of collecting pertinent information for tests at the beginning of the project, such as comprehending the project’s business context, determining parameters needed for test preparation, anticipating adverse conditions and fault tolerance scenarios, and generating technical documentation.</p>
+                        <p> Start your testing process by gathering pertinent information for tests. Comprehend the project’s business context, determine test preparation parameters, anticipate adverse conditions and fault tolerance scenarios, and generate detailed technical documentation. </p>
                         
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
              
@@ -123,22 +336,19 @@ ol > li::marker {
                                 <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test preparation, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
                                 <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
                                 <li><b>Document your process:</b> Create technical documents, like UML activity, sequence, and state machine diagrams, to express the inherent characteristics of DSP. This might include details about concurrency and operation states.</li>
-                            </ol>
-                            
-
-
+                            </ol> 
                         </div>
 
-                        
+                        </div>
                     </section>
-<section class="guideline" id="G2">
-                        <h2>
-                            <span class="guideline-prefix">#G2</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G2-detail" >- ESTABLISH TEST OBJECTIVES</a>
+                    <section class="guideline" id="G2" >
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g2-color-dark" data-target="G2-detail">
+                            <span class="guideline-prefix g2-background-dark">#G2</span>
+                            <div  > ESTABLISH TEST OBJECTIVES</div>
                         </h2>
-
+                        <div class="left-border left-border-color-g2">
                         <img src="img/goal.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
-                        <p> For effective test strategy planning and resource allocation, clear testing objectives are vital. Guideline #G2 offers recommendations for setting these objectives. Each application's unique features dictate specific quality requirements. It's crucial to align these characteristics with desired quality standards, emphasizing the importance of understanding quality from the business perspective.</p>
+                        <p> Define clear testing objectives to guide your testing strategy and resource allocation. Each application’s unique features dictate specific quality requirements. It’s crucial to align these characteristics with desired quality standards, emphasising the importance of understanding quality from the business perspective.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
              
@@ -154,26 +364,73 @@ ol > li::marker {
                                 <li><b>Engage in process stakeholders</b>—business analysts, developers, testers, clients, and users.</li>
                             </ol>
                             <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
-                            <div class="boxed-content">
-                            <div class="boxed-title">Guiding questions to establish test objectives</div>
-                            <div style="margin-right: 10px; margin-left: 10px;">
-                            <b>FUNCTIONAL SUITABILITY</b>
+                            
+
+<!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
+  </button>
+
+  </a> -->
+
+
+<!-- <div type="button" class="boxed-title boxed-title-g2 expand-link" href="javascript:void(0);"  data-target="questions-content">
+                            
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800;"></i>
+                                    </div>
+                                    <div class="col text-center d-flex align-items-center">
+                                        Guiding questions to establish test objectives
+                                    </div>
+                                </div>
+
+                            </div> -->
+
+
+
+
+
+                            <div id="questions-board" class="boxed-content">
+                                <div type="button" class="boxed-title boxed-title-g2 expand-link" href="javascript:void(0);"  data-target="questions-content">
+                            
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Guiding questions to establish test objectives
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            <div id="questions-content" class="inbox-content-g2" style="display: none;">
+                            
+                            <p><b>FUNCTIONAL SUITABILITY</b></p>
+                            <img src="img/verified.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                             <i style="text-decoration: underline;">Q-A How critical is the correctness of the results delivered by the application?</i>
+
+                        
+
                             <ol type="1" fontWeight="bold">
                                 <li> <b>Metrics: </b>Define and establish metrics for assessing the correctness of the application's output.</li>
                                 <li> <b> Prioritisation: </b>Rank the application's features based on the importance and criticality of their correctness. This ranking will guide test planning and ensure that the most crucial features receive proper attention.</li>
                                 <li> <b> System-level Testing: </b>Pay special attention to system-level tests that involve all integrated modules, dependencies, and services. In DSP applications, various system-level factors, such as concurrency, asynchrony, latency, glitches, node crashes, out-of-order, lost, and duplicate messages, can impact the correctness of results.</li>
                             </ol>
 
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                             <i style="text-decoration: underline;">Q-B How critical is the accuracy of results that the application must present?</i>
                             <ol type="1" fontWeight="bold">
                                 <li> <b> Metrics: </b>Establish metrics and acceptable thresholds for the accuracy of results. In some DSP application contexts, data may be subject to fluctuations (e.g., sensor data or geo-location) and some degree of variation in result accuracy may be acceptable in others not.</li>
-                                <li> <b> Non-Determinism: </b>Acknowledge that non-determinism in DSP can affect results accuracy. #G7-B brings recommendations to face this issue, such as establishing acceptable thresholds for result variations in the test oracle, conducting multiple test executions observed for functionalities impacted by variations in results, applying statistical analysis techniques to determine if the variations of the results are acceptable, and others (check details in the non-determinism strategies in #G7.</li>
+                                <li> <b> Non-Determinism: </b>Acknowledge that non-determinism in DSP can affect results accuracy. <a href="#G7" class="internal-link expand-detail-link" data-target="G7-detail">#G7-B</a> brings recommendations to face this issue, such as establishing acceptable thresholds for result variations in the test oracle, conducting multiple test executions observed for functionalities impacted by variations in results, applying statistical analysis techniques to determine if the variations of the results are acceptable, and others.</li>
                                 <li> <b> Monitoring: </b>Use application monitoring tools, such as Grafana, to gather result accuracy metrics and facilitate the analysis of the application's performance.</li>
                             </ol>
 
-                            <b>PERFORMANCE EFFICIENCY</b>
+                            <p><b>PERFORMANCE EFFICIENCY</b></p>
+                            <img src="img/benchmark.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
 
                             <i style="text-decoration: underline;">Q-C How critical are the time requirements (e.g., delay, response time)?</i>
                             <ol type="1" fontWeight="bold">
@@ -181,7 +438,7 @@ ol > li::marker {
                                 <li> <b> Clock Control: </b>Manage the application's clock in test environments, as specialised time handling is required for testing purposes.</li>
                                 <li> <b> Simulate real-world: </b>Time factors are vulnerable in real-world conditions, such as network latency, hardware overhead, and communication overhead with third-party services. Thus, the test environment should closely simulate the production environment conditions.</li>
                                 <li> <b> DSP Frameworks: </b>Typically, DSP frameworks provide control functions and interfaces in their test utilities to address time-related issues, such as clock simulation and manipulation of processing time and watermarks. Consider these aspects when selecting DSP frameworks.</li>
-                                <li> <b> Detailed Recommendations: </b>Check details recommendations regarding time issues in #G7.</li>
+                                <li> <b> Detailed Recommendations: </b>Check details recommendations regarding time issues in <a href="#G7" class="internal-link expand-detail-link" data-target="G7-detail">#G7</a>.</li>
                             </ol>
 
 
@@ -212,8 +469,8 @@ ol > li::marker {
 
 
 
-                            <b>RELIABILITY</b>
-
+                            <p><b>RELIABILITY</b></p>
+                            <img src="img/insignia.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                             <i style="text-decoration: underline;">Q-G How significant is the application's reliability during regular operation?</i>
                             <ol type="1" fontWeight="bold">
                                 <li> <b> Reliability Parameters: </b>Establish parameters to measure application reliability during regular operation.</li>
@@ -244,7 +501,8 @@ ol > li::marker {
                             </ol>
 
 
-                            <b>MAINTAINABILITY</b>
+                            <p><b>MAINTAINABILITY</b></p>
+                            <img src="img/maintenance.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
 
 
                             <i style="text-decoration: underline;">Q-K What is the priority for evolving the application without introducing defects or degrading quality?</i>
@@ -261,18 +519,19 @@ ol > li::marker {
                                 <li> <b> Test Case Maintenance: </b>Consider maintaining automatic test cases, as constant changes in application scenarios require regular refactoring. Focus on automating tests for stable components and avoid creating excessive test cases during project maturation to prevent unnecessary effort wastage.</li>
                             </ol>
                         </div>
-                            </div>
                         </div>
+                    </div>
 
-                        
+                    </div>
                     </section>
-                    <section class="guideline" id="G3">
-                        <h2 >
-                            <span class="guideline-prefix">#G3</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G3-detail" >- SYNC TEAM SKILLS WITH TESTING STRATEGY</a>
+                    <section class="guideline"  id="G3">
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g3-color-dark" data-target="G3-detail">
+                            <span class="guideline-prefix g3-background-dark">#G3</span>
+                            <div> SYNC TEAM SKILLS WITH TESTING STRATEGY</div>
                         </h2>
+                        <div class="left-border left-border-color-g3">
                         <img src="img/requirements.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
-                        <p> Considering the relevance of professionals’ skills on test quality within the DSP context, Guideline #G3 focuses on human resource planning. It is essential to ensure that the right individuals are involved in testing and have the necessary skills and expertise to execute the planned testing activities</p>
+                        <p> The skills of the testing team significantly influence test quality, especially within the DSP context. Ensure that your team is equipped with the necessary expertise to carry out the planned testing activities effectively.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
 
@@ -289,15 +548,17 @@ ol > li::marker {
 
 
 
-                        
+                    </div>    
                     </section>
                     <section class="guideline" id="G4">
-                        <h2 >
-                            <span class="guideline-prefix">#G4</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G4-detail" >- TIME ALLOCATION PLANNING</a>
+                        <h2 style="display: flex;"  type="button" href="javascript:void(0);" class="expand-link guideline-title g4-color-dark" data-target="G4-detail">
+                            <span class="guideline-prefix g4-background-dark">#G4</span>
+                            <div  > TIME ALLOCATION PLANNING</div>
                         </h2> 
+                        <div class="left-border  left-border-color-g4">
                         <img src="img/scheduling.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
-                        <p> Time pressure can significantly hinder testing activities. This pressure can lead to teams rushing, compressing, or even sacrificing crucial activities due to a shrinking timeframe. Therefore, the careful planning and optimisation of time resources become pivotal to prevent delays, relieve time pressure, and avoid contractual breaking. Guideline #G4 provides recommendations for planning and allocating time resources.</p> 
+                        <p> Testing can be significantly hampered by time pressure, causing teams to rush or overlook vital activities. It’s essential to plan and optimise time resources meticulously. This guideline offers insights on preventing delays, alleviating time-induced pressure, and sidestepping potential contractual issues.
+</p> 
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                         <div class="details" id="G4-detail" style="display: none;">
@@ -305,9 +566,9 @@ ol > li::marker {
                             <ol type="A" fontWeight="bold">
                                 <li><b> Allocate time in the project schedule for critical activities</b>, including the development of test cases, configuration of environments, creation of test datasets, execution of tests, and analysis of results.   </li>
                                 <li><b> Consider the complexity of the activity, the time required for test execution,</b> and the number of test cases involved when estimating the time required for each testing activity.   </li>
-                                <li><b> Prioritise activities based on test objectives </b> and project characteristics, as detailed in Guideline #G2. </li>
+                                <li><b> Prioritise activities based on test objectives </b> and project characteristics, as detailed in Guideline <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>. </li>
                                 <li><b> Develop the testing schedule by considering the priority and estimated time required for each testing activity,</b> the available time in the schedule, and the feasible workload.   </li>
-                                <li><b>  Employ automated test case generation techniques,</b> such as property-based tests, to get many basic test cases quickly. </li>
+                                <li><b>  Employ automated test case generation techniques,</b> such as <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests</a>, to get many basic test cases quickly. </li>
                                 <li><b> Gradually initiate the automation of the testing infrastructure as the application gains stability,</b> prioritising the most time-consuming activities.   </li>
                             </ol>
                             
@@ -321,21 +582,22 @@ ol > li::marker {
 
 
 
-                        
+                        </div>
                     </section>
                     <section class="guideline" id="G5">
-                        <h2 >
-                            <span class="guideline-prefix">#G5</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G5-detail" >- PLAN FINANCIAL RESOURCE ALLOCATION</a>
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g5-color-dark" data-target="G5-detail">
+                            <span class="guideline-prefix g5-background-dark" type="button" href="javascript:void(0);" class="expand-link guideline-title g5-color-dark" data-target="G5-detail">#G5</span>
+                            <div  > PLAN FINANCIAL RESOURCE ALLOCATION</div>
                         </h2>
+                        <div class="left-border  left-border-color-g5">
                          <img src="img/budget.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
-                        <p> Financial resources are vital for testing DSP applications. They are essential for several testing activities, such as hiring hardware, outsourcing services, professional training, consultancy, acquiring software and tools, and maintaining the test infrastructure. Therefore, it is a precaution to anticipate allocating financial resources in advance to ensure sufficient resources for the highest-priority testing activities. </p> 
+                        <p> Financial resources are vital for testing DSP applications. Resources are required for numerous activities, including hardware hiring, service outsourcing, training, consultancy, software acquisition, and test infrastructure maintenance. Therefore, it is a precaution to anticipate allocating financial resources to guarantee resources for top-priority testing tasks. </p> 
                          <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                         <div class="details" id="G5-detail" style="display: none;">
                            
                             <ol type="A" fontWeight="bold">
-                                <li><b>Test Objectives Alignment: </b> Ensure that the allocation of financial resources aligns with the testing objectives outlined in Guideline #G2, and then prioritise investments that drive the most significant impact on achieving these objectives.</li>
+                                <li><b>Test Objectives Alignment: </b> Ensure that the allocation of financial resources aligns with the testing objectives outlined in <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>, and then prioritise investments that drive the most significant impact on achieving these objectives.</li>
                                 <li><b>Comprehensive Costing: </b> Account for all potential costs related to the testing process, includ- ing infrastructure (hardware, cloud services), personnel (in-house tester salaries, training fees), consultancy contracts, contracting of services and tools (e.g., test frameworks and third-party services used in tests), and the ongoing maintenance and evolution of the testing infrastructure.</li>
                                 <li><b>Cost-Reduction Strategies: </b> Implement strategies to minimise costs, consider strategies such as infrastructure automation, optimising the use of on-demand paid hardware resources, employing open-source tools, and utilising mock infrastructure and services. Evaluate the cost-effectiveness of cost-reduction strategies against test efficacy.</li>
                             </ol>
@@ -343,64 +605,468 @@ ol > li::marker {
 
                         </div>
 
-                        
+                        </div>
                     </section>
-                    <section class="guideline" id="G6">
-                        <h2 >
-                            <span class="guideline-prefix">#G6</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G6-detail" >-  DEVELOP A TEST DATA STRATEGY</a>
+                    <section class="guideline" id="G6" >
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g6-color-dark" data-target="G6-detail">
+                            <span class="guideline-prefix g6-background-dark">#G6</span>
+                            <div > DEVELOP A TEST DATA STRATEGY</div>
                         </h2>
+                        <div class="left-border  left-border-color-g6">
                          <img src="img/data-server.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
-                        <p> Test data should effectively identify application defects, confirm feature functionality as intended, and ensure compliance with non-functional requirements. This guideline highlights the primary sources of test data and provides insights and recommendations to assist in developing a test data set. Additionally, a summary of data quality characteristics relevant to the DSP application testing is provided. 
-</p> 
+                        <p> Test data should effectively identify application defects, confirm feature functionality as intended, and ensure compliance with non-functional requirements. This guideline highlights the primary sources of test data and provides insights and recommendations to assist in developing a test data set. It also includes a summary of data quality characteristics pertinent to DSP application testing.</p> 
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                         <div class="details" id="G6-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b>Consider ISO/IEC 25012 data quality attributes to assess your test data set:</b> Accuracy, Credibility, Currentness, Compliance and Confidentiality. (check Section 5.1 for detailed descriptions)</li>
+                                <li><b>Consider ISO/IEC 25012 data quality attributes to assess your test data set:</b> Accuracy, Credibility, Currentness, Compliance and Confidentiality. Check <a href="#data-quality-board" class="internal-link expand-detail-link" data-target="data-quality-content">Data Quality Characteristics Board</a>
+                                for detailed descriptions.</li>
                                     
                                 <li><b>Combine diverse test data sources and generation techniques</b> to enhance data variety and mitigate potential biases associated with individual techniques.</li>
 
                                 <li><b>Do not over-rely on historical data,</b> as its effectiveness might be limited due to many never manifested defects in production. Historical data's currentness may also be compromised, as it does not exercise new features and could become incompatible with future application versions.</li>
 
-                                <li><b>Improve historical data efficiency by utilizing semi-synthetic data generation strategies</b> such as mutation, machine learning and manual customization. Check Section \ref{sec:semisyn_data} for details.</li>
+                                <li><b>Improve historical data efficiency by utilizing semi-synthetic data generation strategies</b> such as mutation, machine learning and manual customization. Check <a href="#semi-synthetic-data-board" class="internal-link expand-detail-link" data-target="semi-synthetic-data-content">Semi-Synthetic Data Board</a> for details.</li>
 
                                 <li><b>Maintain vigilance over the data schema,</b> and utilize tools such as Avro for version management and compatibility, to minimize issues throughout the schema's evolution.</li>
                                     
-                                <li><b>Adhere to privacy regulations,</b> such as GDPR, during test data handling to prevent legal issues. Utilize approaches like machine learning and shadow mode running to safeguard confidential information when mirroring production data, as outlined in Section \ref{sec:mirroring}.</li>
+                                <li><b>Adhere to privacy regulations,</b> such as GDPR, during test data handling to prevent legal issues. Utilize approaches like machine learning and shadow mode running to safeguard confidential information when mirroring production data, as outlined in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>.</li>
                                     
-                                <li><b>The property-based data generation is a cost-effective approach,</b> as it is fast and easy to apply, making it suitable when time and resources for generating test data are limited.</li>
+                                <li><b>The <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based </a> data generation is a cost-effective approach,</b> as it is fast and easy to apply, making it suitable when time and resources for generating test data are limited.</li>
 
                                 <li><b>High-quality documentation is a valuable asset when real data is unavailable.</b> Natural language processing algorithms can be employed to extract information from documentation to supply automatic approaches with relevant parameters, generating more accurate synthetic data.</li>
                             </ol>
                             <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
+                       
+
+                            <div id="data-quality-board" class="boxed-content boxed-content-g6">
+                                <div type="button" class="boxed-title boxed-title-g6 expand-link" href="javascript:void(0);"  data-target="data-quality-content" >
+                                <div class="row">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                    </div>
+                                    <div class="col text-center d-flex align-items-center">
+                                        Data Quality Characteristics
+                                    </div>
+                                </div>
+
+
+
+
+
+                                </div>
+                                <div class="inbox-content-g6" id="data-quality-content"   style="display: none;">
+                                <img src="img/data-quality.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    <ol type="1" fontWeight="bold">
+                                        <li> <b>Accuracy: </b> Data accurately represents the intended attribute values of a concept or event within the application context. DSP applications' operations and filters can be highly sensitive; testing such functionalities relies on the precision and relevance of values corresponding to the variable's concept.</li>
+
+                                        <li> <b>Credibility: </b> This concerns the data’s authenticity or whether it is believable as real-world data from the application's usage context. Addressing credibility in the DSP context is more complex due to additional factors, such as the temporal distribution of data, frequency of variable values, and intervals between messages. Furthermore, the 4Vs of Big Data (volume, velocity, variety, and veracity) introduce unique aspects to stream data. </li>
+
+
+                                        <li> <b>Currentness: </b> This relates to the data's age validity. Data characteristics can change over time in the DSP context, making them ineffective for testing (similar to how concept drift affects ML algorithms). Furthermore, application updates may cause data to be incompatible with newer application versions.</li>
+
+                                        <li> <b>Compliance: </b> This involves data adhering to standards and conventions. DPS applications can consist of numerous entities interacting through various message patterns. At this point, test data must be compatible with the data structures in use. Adaptations may be necessary, and message schema management tools provide functionalities to provide compatibility between different message standards.</li>
+
+                                        <li> <b>Confidentiality: </b> This concerns preserving privacy and protecting sensitive information. DSP applications often operate in contexts involving confidential or sensitive data, such as personal, geo-location data, and financial data. Strategies to maintain the confidentiality of real data include anonymization, masking, using artificial intelligence techniques, and mirroring production data in shadow mode (details in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>).</li>
+                                    </ol>                            
+                                </div>
+                            </div>
+                            
+                            <div id="historical-data-board" class="boxed-content boxed-content-g6">
+                                <div type="button" class="boxed-title boxed-title-g6 expand-link" href="javascript:void(0);"  data-target="historical-data-content" >
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Historical Data
+                                        </div>
+                                    </div>                                
+                                </div>
+
+                                <div id="historical-data-content" class="inbox-content-g6"  style="display: none;"   >
+                                    <div style="padding: 10px;">
+                                    <img src="img/historical-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    Historical data are assumed to be real data extracted from the application in production, which should also include metadata regarding temporal properties such as origin timestamps, network delay, and processing time. Historical data provides an initial model of data streams in the production environment.</div>
+                                    <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                                    <ol type="1" fontWeight="bold">
+                                        <li> <b>Test Oracle Generation: </b> Historical data may consist of inputs without expected outputs, and any existing outputs could be unreliable.  Thus, generating and validating outputs for building a test oracle is necessary; this activity depends on documentation that includes data characterization and examples of correct outputs.</li>
+                                        <li> <b>Coverage Limitations: </b> Despite extensive historical data, it may not cover all potential future bugs due to application complexity and unmanifested bugs that could arise in production. </li>
+                                        <li> <b>Outdatedness: </b> Historical data might not exercise new functionality effectively and could become incompatible with updated message schemas. As conceptual data characteristics can change over time, their ability to simulate real-world conditions may decrease.</li>
+
+                                    </ol>                            
+                                </div>
+                            </div>
+
+                            <div id="mirroring-production-board" class="boxed-content boxed-content-g6">
+                                <div type="button" class="boxed-title boxed-title-g6 expand-link" href="javascript:void(0);"  data-target="mirroring-production-content">
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Mirroring Production Data
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="mirroring-production-content" class="inbox-content-g6" style="display: none; padding: 8px;" >
+                                    <p>In this approach, replicas of the input data stream are redirected from the production environment to the testing environment, enabling the application to be tested with real data. This strategy allows the detection of critical failures that could disrupt the application's execution and facilitates the comparison of performance parameters and results accuracy across different application versions. Additionally, this strategy can be employed while ensuring privacy and data security through mechanisms such as shadow mode, which conducts automatic verification of parameters and execution results. Implementing this technique requires the availability of resources to replicate the infrastructure and skilled professionals to build the verification mechanism.</p>
+                                    
+                                    <img src="img/mirroring-data-process-2.png" alt="Descrição da imagem" style="width: 100%;">
+                                                          
+                                </div>
+
+                            </div>
+
+                            <div id="synthetic-data-board" class="boxed-content boxed-content-g6">
+                                
+                                <div type="button" class="boxed-title boxed-title-g6 expand-link" href="javascript:void(0);"  data-target="synthetic-data-content">
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Synthetic Data
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="synthetic-data-content" class="inbox-content-g6" style="display: none; padding: 8px;">
+                                    <img src="img/synthetic-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    This type of data is generated automatically without using real data in the process. Techniques within this category range from simple random data generation to more sophisticated approaches based on Artificial Intelligence.
+                                    <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                                    <ol type="1" fontWeight="bold">
+                                        <li> <b>Property-based Data Generation:</b> generates data by exploiting the message contract properties of the data stream. The technique can generate immense amounts of data which can be refined by a process called shrinking, where the objective is to find the minimum data set to manifest the failure. this is a low-cost technique that requires effort to prepare and is, therefore, quick and easy to apply. The following tools support this technique FlinkCheck, ScalaCheck, StreamData, and Ecto Stream Factory. (Check detais on <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests.</a>) </li>
+
+                                          
+                                        <li> <b>Statistical Properties-Based Generation:</b> results in more accurate data by configuring the generated data's statistical distribution and the temporal variations in the data distribution. This approach requires a solid understanding of mathematics and statistics. Custom scripts can be built using statistical libraries like Scipy in combination with fake data generation libraries. Pay-per-use services like Mockaroo offer ready-to-use solutions where users simply specify data generation properties.</li>
+
+
+                                        <li> <b>AI-Based Generation:</b> Natural language processing algorithms can extract information from project documentation, providing valuable input for machine learning algorithms in generating more meaningful data.</li>
+
+                                    </ol> 
+
+
+                                </div>
+                            </div>
+
+                            <div id="semi-synthetic-data-board" class="boxed-content boxed-content-g6">
+                                <div type="button" class="boxed-title boxed-title-g6 expand-link" href="javascript:void(0);"  data-target="semi-synthetic-data-content">
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Semi-synthetic data
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div id="semi-synthetic-data-content" class="inbox-content-g6" style="display: none; padding: 8px;">
+                                    <img src="img/semi-synthetic-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    This approach combines synthetic data generation with real-world data and may also involve customization steps. This strategy can be beneficial for increasing test coverage of historical data and adapting data to address more complex test cases.
+                                    <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                                    <ol type="1" fontWeight="bold">
+                                        <li><b>Mutation:</b> This process generates new data by slightly altering the values of existing data.These minor modifications increase data diversity, reflecting the variability and complexity of real-world data while preserving the essential characteristics of the original data.</li>
+
+                                        <li><b>Machine learning:</b> This method employs machine learning algorithms to extract features from an existing dataset and create models for generating new data. It can be used to expand limited test datasets, produce data variants to enhance test coverage and preserve real data privacy. Implementing this technique relies on skilled professionals in the field of machine learning.</li>
+
+                                        <li><b>Manual customizations:</b> This process involves refining data to test functionalities that depend on a specific set of conditions, which synthetic data may not be able to trigger. Customizations can be achieved through iterative script execution processes and manual adjustment of generation variables until the desired result is achieved. This approach requires a professional who understands the application’s context and has access to comprehensive documentation detailing the functionalities.</li>
+
+                                    </ol> 
+
+
+                                </div>
+                            </div>
+
+
+
                         </div>
 
-                        
+                        </div>
                     </section>
-                    <section class="guideline" id="G7">
-                        <h2 >
-                            <span class="guideline-prefix">#G7</span>
-                            <a href="javascript:void(0);" class="expand-link" data-target="G7-detail" >- BE AWARE OF PARTICULAR ISSUES IN DATA STREAM PROCESSING APPLICATION TESTING</a>
-                        </h2> 
-                        <img src="img/data-server.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
-                        <p> DSP applications have specific characteristics that must be considered during test planning and execution. This guideline highlights three particular concerns: timing issues (\#G7-A), the non-deterministic nature of distributed DSP (\#G7-B), and fault tolerance (\#G7-C). A brief introduction is given for each concern, followed by relevant observations and recommendations for associated testing strategies.</p> 
+                    <section class="guideline" id="G7" >
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g7-color-dark" data-target="G7-detail">
+                            <span class="guideline-prefix g7-background-dark">#G7</span>
+                            <div > BE AWARE OF PARTICULAR ISSUES IN DATA STREAM PROCESSING APPLICATION TESTING</div>
+                        </h2>
+                                    
+                        <div class="left-border  left-border-color-g7"> 
+                        <img src="img/issue.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                        <p> DSP applications have specific characteristics that must be considered during test planning and execution. This guideline highlights three particular concerns: timing issues, the non-deterministic nature of distributed DSP, and fault tolerance requirements. Each concern is briefly introduced, followed by relevant observations and recommendations for associated testing strategies.</p>
+                        <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
-                        <div class="details" id="G7-detail" style="display: none;">
+                        <div class="details" id="G7-detail"  style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. For a more comprehensive discussion on time-related concerns, please refer to Section \ref{sec:time_issues}.</li>
+                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. Below, we discuss time-related concerns and associated recommendations more comprehensively.</li>
+                                 <div id="time-issues-board" class="boxed-content boxed-content-g7">
+                                <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="time-issues-content" >
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Time Issues Recommendations
+                                        </div>
+                                    </div>                                
+                                </div>
 
-                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting chaos engineering to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Additional information concerning non-determinism matters can be found in Section \ref{sec:nondeterminism}.</li>
+                                <div id="time-issues-content" class="inbox-content-g7"  style="display: none;"   >
+                                    <div style="padding: 10px;">
+                                    <img src="img/clock-engine.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                                    Testing DSP applications requires understanding how time operates in production and testing environments. In production, the timing characteristics of data stream messages are inherent to the business context. However, these timings will differ in the test environment and can affect the validity of test results.</div>
+                                    <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                                    <ol type="1" fontWeight="bold">
+                                        <li> <b>Clock Simulation:</b> Clock Simulation: Controlling the system clock in the test environment is essential to emulate the time aspects of the production scenario as closely as possible. This feature is particularly useful for testing temporal windows, as the number of messages in each window can vary depending on the intervals between messages. The same applies to testing algorithms and functions that evaluate time factors, be aware of how the frequency of event generation in your test environment could influence test outcomes. </li>
+                                      
+
+                                        <li> <b>Speeding up the clock:</b> Speeding up the clock in the test environment is a valuable strategy to minimize the duration of tests. Many stream processing platforms provide functions that allow for clock manipulation, including skipping certain test cycles, generating artificial watermarks, and configuring event timestamps to match an accelerated timeline. However, it's necessary to balance speed with result accuracy when employing this approach. Excessive acceleration of the clock may lead to losses in precision, which could obscure potential issues in the application. Essentially, if the test clock runs too fast, bugs tied to specific timing scenarios may go undetected.</li>
 
 
-                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, Chaos Engineering is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Section \ref{sec:fault_tolerance} provides details on fault-tolerance mechanisms.</li>
+                                        <li> <b>Adjusting the Processing Time Interval:</b> Calibrating the processing time interval is also crucial in testing DSP applications. Longer intervals can yield inaccurate results, while shorter intervals result in more frequent updates and more accurate results but at the expense of increased computational overhead.</li>
+
+                                        <li> <b>Checkpointing Mechanisms:</b> This is a valuable mechanism that periodically stores consistent snapshots of all states in timers and stateful operators, including connectors, windows, and any user-defined state. Platforms like Apache Flink come with built-in checkpointing features. This approach provides valuable state data to reproduce conditions in specific testing scenarios. </li>
+
+                                        <li> <b>Testing Asynchronous Operations:</b> Asynchronous operations are particularly tricky to test, as firing an event may involve timeouts and manipulating states stored in stateful operators. Testing these operations requires special attention due to their non-linear execution, and it's crucial to ensure that your testing environment can accurately monitor, manage, and validate these operations. One recommended tool for handling asynchronous operations is the Awaitility library, as it supports testing asynchronous operations by synchronizing these operations during the test, enabling the test to wait until certain pre-set conditions are met.</li>
+
+                                    </ol>                            
+                                </div>
+                            </div>
+
+                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting chaos engineering to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Next, we bring recommendations regarding issues of non-determinism in DSP context.</li>
+
+                                 <div id="non-determinism-board" class="boxed-content boxed-content-g7">
+                                <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="non-determinism-content" >
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Non-Deterministic Behavior Recommendations
+                                        </div>
+                                    </div>                                
+                                </div>
+
+                                <div id="non-determinism-content" class="inbox-content-g7"  style="display: none;"  >
+                                    <div style="padding: 10px;">
+                                        <img src="img/non-deterministic.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                                        The non-determinism of DSP applications adds a layer of complexity to the testing process. The potential for different results to be produced in multiple runs complicates the result's consistency and the establishment of accurate test oracles. Non-determinism manifests at the system level when numerous variables contributing to non-determinism are present simultaneously. Several characteristics intrinsic to DSP applications, such as stateful operations, window-based operations, concurrent operations, and out-of-order messages, make applications inherently non-deterministic. DSP application functionalities often involve complex processes, encompassing multiple sequential and concurrent transformations. They may also rely on temporal windows and keep numerous shared states. Such functionalities tend to exhibit variation in their results when subjected to fluctuating network delays or changes in message order from data producers, complicating the construction of reliable test oracles.
+                                    </div>
+                                    <ol type="1" fontWeight="bold">
+                                        <li><b>Test Oracle Construction:</b> Establish acceptable thresholds for result variations during oracle construction. Then, statistical methods can be used to validate whether the observed variations align with the predetermined limits.</li>
+                                        <li><b>Deterministic Replay:</b> This approach involves managing and identifying variables contributing to non-determinism, thus providing better control during test execution. </li>
+                                        <li><b>Chaos Engineering:</b> In order to check results consistency, experiment repeated tests run application tests under non-deterministic variables like out-of-order messages and network and data volume oscillation.</li>
+                                        <li><b>Consider Typical Bugs Related to Non-Determinism:</b> Watch out for typical non-determinism bugs, such as race conditions, ordering issues, state inconsistencies, lost, duplicate or delayed messages, and timeout-associated bugs.</li>
+                                      
+
+                                    </ol>                            
+                                </div>
+                            </div>
+
+
+                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, Chaos Engineering is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Below we provide additional information and recommendations regarding fault tolerance.</li>
+                           
+                            
+
+                                <div id="fault-tolerance-board" class="boxed-content boxed-content-g7">
+                                    <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="fault-tolerance-content" >
+                                        <div class="row">
+                                            <div class="col-auto d-flex align-items-center">
+                                                <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                            </div>
+                                            <div class="col text-center d-flex align-items-center">
+                                                Fault Tolerance Recommendations
+                                            </div>
+                                        </div>                                
+                                    </div>
+
+                                    <div id="fault-tolerance-content" class="inbox-content-g7"   style="display: none; padding: 10px;"  >
+                                        <div>
+                                            <img src="img/fault-tolerant-design.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                                           <p>DSP applications run uninterruptedly 24/7 operations valuable to the companies' businesses. Therefore, this application must keep running in adverse conditions with disaster recovery capabilities to self-recuperate from crashes. In addition to application construction failures, such as a bug resulting from a programming error, we should also be concerned with failures arising from glitches and interruptions or oscillations of computational resources, networks and third-party services. For an application to be fault tolerant, it is necessary to build tolerance mechanisms. Such mechanisms involve first the autonomous ability to identify failures when they occur or predict failures about to emerge and then the action to prevent or reverse failures.</p>
+
+                                            <p>Chaos Engineering plays a significant role in testing fault tolerance and system recoverability. It involves subjecting the DSP application to a controlled set of abnormal scenarios and verifying whether the system can restore checkpoints and resume regular functionality. Tools like the Thundra, Chaos Monkey and WireMock allow injecting errors, network oscillations, randomly terminating service, and simulating a range of possible failures to assess their impact. This process provides valuable insights for improving fault tolerance and recovery mechanisms by identifying potential weaknesses in the system. Below are some fault tolerance strategies that can be adopted in the context of DSP.</p>
+                                        </div>
+                                        <ol type="1" fontWeight="bold">
+                                            <li><b>Infrastructure redundancy:</b> This strategy involves having redundant backup servers, ready to take over in the event of primary server failure. This strategy may be financially costly, and budget availability must be evaluated.</li>
+
+
+                                            <li><b>Scalability of hardware or network resources:</b> Upon detecting an increase in demand, adjust resources to keep the service running within specified performance requirements. Elastic scalability is a feature of cloud infrastructures that performs this task. This mitigation action must consider the strategy for allocating financial resources.</li>
+
+                                            <li><b>Service redundancy:</b> This strategy involves having alternatives for backup services that are automatically activated when a third-party service fails. For example, backup providers can easily replace SMS, encryption, and freight calculation services if they become unavailable.</li>
+
+                                            <li><b>Operation downsizing:</b> In the face of a failure that cannot be automatically circumvented, the impacts of different mitigation strategies must be evaluated, such as temporarily interrupting the service, deactivating certain functionalities, or continuing to operate under extraordinary conditions. The mitigation strategy depends significantly on the application's context and will be tied to business decisions. For example, an e-commerce company can extraordinarily pre-authorize purchases from frequent customers when a particular payment service is temporarily offline. Conversely, a bank would prefer to turn down sensitive services when some security features are offline.</li>
+
+                                            <li><b>Version rollback:</b> In the face of unstable behaviour or failures after the release of a new version, a mechanism for easy version update rollback is recommended to quickly contain problems in the production environment.</li>
+
+                                            <li><b>Operations rollback:</b> when an operation has been delivering incorrect results due to a bug for some time. First, it is necessary to identify the period in which the incorrect results were delivered to reprocess them with a backup infrastructure. In addition, issues related to legal aspects and the business context must be evaluated, as reprocessing operations a posteriori can be useless or harmful. For example, credit card companies attend legal procedures for reversing and correcting incorrect charges.</li>
+
+                                            <li><b>Contracts compatibility:</b> Large and complex DSP applications can have complex data schema with many message contracts. Updates can cause contract incompatibilities, especially if many modules interact and several teams promote changes in these modules and third-party services. Mitigation involves maintaining backward compatibility with contracts until contract updates propagate. Among the solutions in this context, we mention Avro, which supports compatibility for evolving contracts over time.</li>
+                                          
+
+                                        </ol>                            
+                                    </div>
+                                </div>
                             </ol>
                             <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
+                            
+
+
+
+                        </div>
                         </div>                        
                     </section>
+
+
+                    <section class="guideline" id="example" >
+                        <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title example-color-dark" data-target="example-detail">
+                            <!-- <span class="guideline-prefix example-background-dark">#G7</span> -->
+                            <div > Example scenario: Stream Data on an Electric Scooter Rental Application </div>
+                        </h2>
+                                    
+                        <div class="left-border  left-border-color-example"> 
+                            <p> The application of these guidelines is versatile, allowing adjustments based on participants' expertise and specific project requirements. They can serve as a sequential guide or reference for targeted queries. Below, we provide a simplified example to illustrate their practical use. Inspired by a real-world case, this scenario showcases the development of a test plan, adhering to the guideline flow from #G1 through #G7.</p>
+
+                            <div class="details" id="example-detail"  style="display: none;">
+                            <img src="img/scooter2.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 400px; height: 400px;">                       
+                            <h3>Colleting Information</h3>
+
+                            <p>We started planning the testing strategy with <a href="#G1" class="internal-link expand-detail-link" data-target="G7-detail">#G1</a>, which drives the information-gathering phase to understand the application's business context and identify important information for testing efforts.</p>
+
+
+                            <p><b>#G1-A Context:</b> The application processes stream data from each scooter in the fleet. The stream data includes real-time GPS coordinates, battery level status, and events related to the scooter's usage (e.g., ride start/end). Features related to DSP include scooter release and blocking events (due to low battery and maintenance), geofencing areas where scooters are permitted for use and parking, monitoring data for battery levels, and real-time location data. The performance requirements are not stringent, as there is a certain tolerance for response time. The volume of data does not significantly scale since there is a fixed number of scooters. Minor inaccuracies, slight delays in data, out-of-order data, and loss of some location data do not constitute serious issues. However, the availability of the stream processing service is critical, as it would affect the scooter rental operation.</p>
+
+                            <p><b>#G1-B Collecting Parameters for Testing:</b> The expected response time for the stream processing operations during regular operation is 3 seconds. The data volume refers to 10,000 scooters distributed in multiple cities, each transmitting a stream of location data and battery-level information.</p>
+
+                            <p><b>#G1-C Characterising Adverse Conditions and Fault Tolerance Scenarios:</b> The primary concern is the intermittent nature of mobile internet, which can result in communication delays and feature timeouts.</p>
+
+                            <p><b>#G1-D Producing Testing Documentation:</b> Activity, sequence, and state diagrams are appropriate to represent relevant aspects for testing in this scenario.</p>
+
+
+
+                            <h3>Establishing test objectives</h3>
+
+                            As proposed in item <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2-A</a>, we have established and prioritised the test objectives with the <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">Guiding questions to establish test objectives</a>.
+
+                            <h4>High Priority</h4>
+
+                            <ul>
+
+                            <li><b>Question A -</b> Correctness is critical for user experience, particularly for remote locking and unlocking scooters.</li>
+
+                            <li><b>Question H -</b> Operational availability is critical to the operational efficiency of the business, as outlined in the scenario context. </li>
+
+                            <li><b>Question G -</b> It is a high priority to ensure the applications' reliability during regular operation.</li>
+
+                            <li><b>Question C -</b> Meeting the application's time requirements is relevant for user experience. </li>
+                            </ul>
+
+                            Given the high priority of these objectives and related recommendations, testing efforts should primarily focus on verifying correctness, time requirements, and reliability through system-level tests that involve all integrated modules, dependencies, and services. Concerning operational availability, it is appropriate to conduct fault tolerance tests using chaos engineering approaches to validate the application's ability to keep running under atypical conditions. Building infrastructure and service redundancy mechanisms would be advisable due to the high priority of reliability.
+
+                            <h4>Medium Priority</h4>
+
+                            <ul>
+                            <li><b>Question B</b> The accuracy level of the geolocation data is valuable, but it is not a critical matter.</li>
+
+                            <li><b>Question D</b> Given the limited availability of resources, it is suitable to meet the quantities and types of resource requirements. </li>
+
+                            <li><b>Question E</b> Efficiency in employing resources is important for cost-effectiveness due to limited financial resources.</li>
+
+                            <li><b>Question I</b> Performing as required despite adverse conditions is relevant, primarily due to mobile network intermittence.</li>
+
+                            <li><b>Question J</b> Quickly recovering to the desired system state in the event of failure is valuable, as the states and data of ongoing scooter rides operations need to be recovered following failures.</li>
+
+                            <li><b>Question L</b> Minimising costs and workload for test maintenance during project evolution is pertinent due to the scarcity of financial resources and the demanding workload of professionals. </li>
+                            </ul>
+
+                            Considering medium-priority objectives, system-level tests are recommended to verify real-time location accuracy, battery status, and geofence limit. As outlined in <a href="#G7" class="internal-link expand-detail-link" data-target="G7-detail">#G7-B</a>, when assessing the accuracy of results, one must be aware of the non-determinism factor in DSP. In this case, it would be appropriate to build test oracles with limits on result variations as well as to adopt the deterministic replay approach.
+
+                            Due to the need for efficient use of hardware resources and adapting the application to meet the resources requirements, it is recommended to monitor the use of hardware resources during testing and then promote optimisations for resource-intensive operations. Moreover, regarding resource constraints, effort should be made to minimise test maintenance workloads to reduce costs by gradually implementing automatic tests and CI/CD pipelines.
+
+
+                            To ensure the applications perform as required despite adverse conditions, we plan to apply chaos engineering practices to evaluate the application's robustness and identify scenarios in which the application can still perform as required, even under adverse conditions. Regarding data recovery and state restoration after an interruption, it would be appropriate to establish a disaster recovery plan first and then perform fault-tolerance tests to verify autonomous recovery mechanisms and application integrity following recovery.
+
+                            <h4>Low Priority</h4>
+
+                            <ul>
+                            <li><b>Question K</b> Modifying the application without introducing defects is opportune, but it is not a priority.</li>
+
+                            <li><b>Question F</b> The application's performance at maximum capacity limits is not a significant concern. The data volume is predictable because the maximum number of scooters is constant.</li>
+                            </ul>
+
+                            Testing activities related to low-priority objectives come last. Concerning regression bugs, it is necessary first to establish plans for application evolution and then conduct regression testing to verify correctness, assess any degradation in performance, and confirm the schema integrity. The regression test suite would evolve, beginning with the most critical functions, and its progress will also depend on the maturity of the CI/CD pipelines. Since there will not be sudden fluctuation in data volume, performance at maximum capacity is not a priority, so stress tests should be conducted only if the scooter fleet expands.
+
+                            <h3>Resource Planning</h3>
+
+                            In general, resources are limited in this scenario. Comments on <a href="#G3" class="internal-link expand-detail-link" data-target="G3-detail">#G3</a>, <a href="#G4" class="internal-link expand-detail-link" data-target="G4-detail">#G4</a>, and <a href="#G5" class="internal-link expand-detail-link" data-target="G5-detail">#G5</a> regarding human, financial, and time resource planning will be below.
+
+                            <p><b>#G3 Human Resources:</b> The team consists of five skilled developers, but their testing experience in the DSP applications is somewhat limited. Concerning the workload (<a href="#G3" class="internal-link expand-detail-link" data-target="G3-detail">#G3-C</a>), none of the team members is exclusively dedicated to testing; instead, developers share the workload between development activities and testing based on demand. As proposed in <a href="#G3" class="internal-link expand-detail-link" data-target="G3-detail">#G3-A</a>, when evaluating the team's skills, it is clear that at the project's beginning, developers are more proficient at implementing more traditional test approaches, such as unit tests. However, following <a href="#G3" class="internal-link expand-detail-link" data-target="G3-detail">#G3-B</a>, it is recommended to provide learning opportunities for the team to study and employ specific test techniques pertinent to the DSP context.</p>
+
+
+                           <p><b>#G4 Time Resources:</b> The deadlines are short, as a beta version is already in production. As indicated by <a href="#G4" class="internal-link expand-detail-link" data-target="G4-detail">#G4-A-B-C-D</a>, the time dedicated to testing must be allocated into the schedule, estimating the duration of each activity and prioritising the most relevant ones based on test objectives (which will be established with <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>). Particular attention should be given to test automation and generative techniques for test data creation, as suggested by <a href="#G4" class="internal-link expand-detail-link" data-target="G4-detail">#G4-E-F</a>; these are valuable recommendations given the constraints of short deadlines and limited workload.</p>
+
+                            <p><b>#G5 Financial Resources:</b> Financial resources for contracting testing services and infrastructure are limited. <a href="#G5" class="internal-link expand-detail-link" data-target="G5-detail">#G5-C</a> provides suggestions for reducing costs applicable in these scenarios, such as automating test infrastructure, adopting open-source tools, and utilising mocked infrastructure and services. <a href="#G5" class="internal-link expand-detail-link" data-target="G5-detail">#G5-B</a> advises considering the future costs of maintaining and evolving the test infrastructure. The recommendations are especially pertinent in this scenario due to the limitation of financial resources.</p>
+
+
+                            <h3>Test Data Strategy</h3>
+
+                            A small set of anonymised historical data is available for testing purposes. According to data quality attributes from <a href="#G6" class="internal-link expand-detail-link" data-target="G6-detail">#G6-A</a>, test data accuracy and credibility are the most relevant for this scenario. Therefore, data must reflect credible and accurate scooter parameters like location and battery level. The GPS data must realistically simulate the typical riding behaviour of a scooter, while battery data should mimic various drain patterns, such as gradual and abrupt drops.
+
+                            As recommended in <a href="#G6" class="internal-link expand-detail-link" data-target="G6-detail">#G6-C</a>, one should not overestimate the effectiveness of historical data for testing, especially when the quantity of data is limited. Therefore, as proposed in <a href="#G6" class="internal-link expand-detail-link" data-target="G6-detail">#G6-D</a>, we first should focus on improving the efficiency of historical data through semi-synthetic data generation strategies. Given the limited resources available, data mutation is a straightforward implementation technique. At the same time, manual customisation can occasionally be employed for test cases related to critical operations, such as locking and unlocking scooters.
+
+                            Later, we opted to generate synthetic data to diversify the test data generation technique and thus mitigate potential bias, as pointed out in <a href="#G6" class="internal-link expand-detail-link" data-target="G6-detail">#G6-B</a>. Property-based data generation is an appropriate technique for this scenario because it is quick and easy to apply and provides cost-effective coverage, as indicated in <a href="#G6" class="internal-link expand-detail-link" data-target="G6-detail">#G6-G</a>.
+                                
+                                                           
+                                
+
+                                
+
+
+                            </div>
+                        </div>                        
+                    </section>
+
+
+                    <!-- Modal Property-based tests-->
+                    <div class="modal fade" id="property-based-tests-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Property-based Testing (PBT)</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Property-based testing focuses on verifying software components against inputs generated from defined properties. These properties are set using Boolean expressions that describe the component's high-level behaviour, establishing a formal validation process. Traditional testing often requires developers to craft multiple test scenarios, targeting prominent corner cases manually. </p>
+                            <p>In contrast, PBT offers an automated solution. It starts with the generation of random inputs aimed at uncovering faults. If an issue arises, the system isolates the root cause using a "shrinking" method. This process reduces the inputs to the simplest form required to reproduce the failure, allowing for the rapid generation of test cases relevant to different components.</p>
+                            <p>In the DSP context, PBT provides more comprehensive test coverage. Tools like FlinkCheck for Apache Flink and the ScalaCheck library for Spark Streaming are a testament to its rising significance. FlinkCheck, for instance, employs a bounded temporal logic, generating input streams and evaluating the output streams of the Flink runtime. Similarly, an API tailored for Spark Streaming facilitates the writing of tests in the Scala functional language in conjunction with the ScalaCheck library.</p>
+                            <p>Further supporting the case for PBT in DSP is its adoption in real-world scenarios. Researchers Espinosa et al. and Riesco et al. have introduced PBT tools for prominent frameworks like Apache Flink and Apache Spark Streaming. Using temporal logic, these tools generate random streams, ensuring the validation of time-related properties. Moreover, with DSP's increasing reliance on APIs, PBT's ability to mock API data is invaluable, particularly during unit and integration tests when actual API services might be inaccessible.</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 </div>
             </div>
@@ -413,27 +1079,59 @@ ol > li::marker {
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let links = document.querySelectorAll('.expand-link');
+        document.addEventListener('DOMContentLoaded', function() {
+            let links = document.querySelectorAll('.expand-link, .expand-detail-link');
 
-        links.forEach(function(link) {
-            link.addEventListener('click', function() {
-                let targetId = this.getAttribute('data-target');
-                let targetElement = document.getElementById(targetId);
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    let targetId = this.getAttribute('data-target');
+                    let targetElement = document.getElementById(targetId);
 
-                if(targetElement.style.display === "none") {
-                    targetElement.style.display = "block";
-                } else {
-                    targetElement.style.display = "none";
-                }
+                    // Se o link é um ".expand-detail-link" e o targetElement já está sendo exibido, não mude o estilo de exibição
+                    if (!(e.target.classList.contains('expand-detail-link') && targetElement.style.display === "block")) {
+                        if (targetElement.style.display === "none") {
+                            targetElement.style.display = "block";
+                        } else {
+                            targetElement.style.display = "none";
+                        }
+                    }
+
+                    // Se o link é um ".expand-detail-link", previna o comportamento padrão do link
+                    if (e.target.classList.contains('expand-detail-link')) {
+                        e.preventDefault();
+
+                        // Scrolle para o elemento de destino
+                        let sectionId = this.getAttribute('href').slice(1);  // remove o caracter '#'
+                        document.getElementById(sectionId).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
-    });
+
+
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     let links = document.querySelectorAll('.expand-link');
+
+    //     links.forEach(function(link) {
+    //         link.addEventListener('click', function() {
+    //             let targetId = this.getAttribute('data-target');
+    //             let targetElement = document.getElementById(targetId);
+
+    //             if(targetElement.style.display === "none") {
+    //                 targetElement.style.display = "block";
+    //             } else {
+    //                 targetElement.style.display = "none";
+    //             }
+    //         });
+    //     });
+    // });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
