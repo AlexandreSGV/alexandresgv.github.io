@@ -490,7 +490,7 @@ a.tips:hover {
                                 <li> <b> Adverse Conditions Definition: </b>Detail adverse conditions and clarify whether the application can function with limited capabilities under such scenarios, specifying which functionalities would continue or stop.</li>
                                 <li> <b> Performance degradation approach: </b>Specify if the application's performance might deteriorate under adverse conditions and delineate the potential extent of this degradation.</li>
                                 <li> <b> Fault Tolerance Testing: </b>Conduct fault tolerance testing to identify scenarios of adverse conditions where the application can still perform as required.</li>
-                                <li> <b> Chaos Engineering: </b>Employ chaos engineering in testing to assess application robustness, using an experimental setup to simulate failures like network degradation, node crashes, third-party service outages, and reduced computational resources.</li>
+                                <li> <b> Chaos Engineering: </b>Employ <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> Chaos Engineering </a> in testing to assess application robustness, using an experimental setup to simulate failures like network degradation, node crashes, third-party service outages, and reduced computational resources.</li>
                             </ol>
 
                             <i style="text-decoration: underline;">Q-J What is the priority level for the application to recover affected data and restore the desired system state in the event of an interruption or failure?</i>
@@ -840,7 +840,7 @@ a.tips:hover {
                                 </div>
                             </div>
 
-                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting chaos engineering to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Next, we bring recommendations regarding issues of non-determinism in DSP context.</li>
+                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a>  to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Next, we bring recommendations regarding issues of non-determinism in DSP context.</li>
 
                                  <div id="non-determinism-board" class="boxed-content boxed-content-g7">
                                 <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="non-determinism-content" >
@@ -862,7 +862,7 @@ a.tips:hover {
                                     <ol type="1" fontWeight="bold">
                                         <li><b>Test Oracle Construction:</b> Establish acceptable thresholds for result variations during oracle construction. Then, statistical methods can be used to validate whether the observed variations align with the predetermined limits.</li>
                                         <li><b>Deterministic Replay:</b> This approach involves managing and identifying variables contributing to non-determinism, thus providing better control during test execution. </li>
-                                        <li><b>Chaos Engineering:</b> In order to check results consistency, experiment repeated tests run application tests under non-deterministic variables like out-of-order messages and network and data volume oscillation.</li>
+                                        <li><b><a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> Chaos Engineering </a>:</b> In order to check results consistency, experiment repeated tests run application tests under non-deterministic variables like out-of-order messages and network and data volume oscillation.</li>
                                         <li><b>Consider Typical Bugs Related to Non-Determinism:</b> Watch out for typical non-determinism bugs, such as race conditions, ordering issues, state inconsistencies, lost, duplicate or delayed messages, and timeout-associated bugs.</li>
                                       
 
@@ -871,7 +871,7 @@ a.tips:hover {
                             </div>
 
 
-                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, Chaos Engineering is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Below we provide additional information and recommendations regarding fault tolerance.</li>
+                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a> is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Below we provide additional information and recommendations regarding fault tolerance.</li>
                            
                             
 
@@ -892,7 +892,7 @@ a.tips:hover {
                                             <img src="img/fault-tolerant-design.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                                            <p>DSP applications run uninterruptedly 24/7 operations valuable to the companies' businesses. Therefore, this application must keep running in adverse conditions with disaster recovery capabilities to self-recuperate from crashes. In addition to application construction failures, such as a bug resulting from a programming error, we should also be concerned with failures arising from glitches and interruptions or oscillations of computational resources, networks and third-party services. For an application to be fault tolerant, it is necessary to build tolerance mechanisms. Such mechanisms involve first the autonomous ability to identify failures when they occur or predict failures about to emerge and then the action to prevent or reverse failures.</p>
 
-                                            <p>Chaos Engineering plays a significant role in testing fault tolerance and system recoverability. It involves subjecting the DSP application to a controlled set of abnormal scenarios and verifying whether the system can restore checkpoints and resume regular functionality. Tools like the Thundra, Chaos Monkey and WireMock allow injecting errors, network oscillations, randomly terminating service, and simulating a range of possible failures to assess their impact. This process provides valuable insights for improving fault tolerance and recovery mechanisms by identifying potential weaknesses in the system. Below are some fault tolerance strategies that can be adopted in the context of DSP.</p>
+                                            <p><a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> Chaos engineering </a> plays a significant role in testing fault tolerance and system recoverability. It involves subjecting the DSP application to a controlled set of abnormal scenarios and verifying whether the system can restore checkpoints and resume regular functionality. Tools like the Thundra, Chaos Monkey and WireMock allow injecting errors, network oscillations, randomly terminating service, and simulating a range of possible failures to assess their impact. This process provides valuable insights for improving fault tolerance and recovery mechanisms by identifying potential weaknesses in the system. Below are some fault tolerance strategies that can be adopted in the context of DSP.</p>
                                         </div>
                                         <ol type="1" fontWeight="bold">
                                             <li><b>Infrastructure redundancy:</b> This strategy involves having redundant backup servers, ready to take over in the event of primary server failure. This strategy may be financially costly, and budget availability must be evaluated.</li>
@@ -969,7 +969,7 @@ a.tips:hover {
                             <li><b>Question C -</b> Meeting the application's time requirements is relevant for user experience. </li>
                             </ul>
 
-                            Given the high priority of these objectives and related recommendations, testing efforts should primarily focus on verifying correctness, time requirements, and reliability through system-level tests that involve all integrated modules, dependencies, and services. Concerning operational availability, it is appropriate to conduct fault tolerance tests using chaos engineering approaches to validate the application's ability to keep running under atypical conditions. Building infrastructure and service redundancy mechanisms would be advisable due to the high priority of reliability.
+                            Given the high priority of these objectives and related recommendations, testing efforts should primarily focus on verifying correctness, time requirements, and reliability through system-level tests that involve all integrated modules, dependencies, and services. Concerning operational availability, it is appropriate to conduct fault tolerance tests using <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a> approaches to validate the application's ability to keep running under atypical conditions. Building infrastructure and service redundancy mechanisms would be advisable due to the high priority of reliability.
 
                             <h4>Medium Priority</h4>
 
@@ -992,7 +992,7 @@ a.tips:hover {
                             Due to the need for efficient use of hardware resources and adapting the application to meet the resources requirements, it is recommended to monitor the use of hardware resources during testing and then promote optimisations for resource-intensive operations. Moreover, regarding resource constraints, effort should be made to minimise test maintenance workloads to reduce costs by gradually implementing automatic tests and CI/CD pipelines.
 
 
-                            To ensure the applications perform as required despite adverse conditions, we plan to apply chaos engineering practices to evaluate the application's robustness and identify scenarios in which the application can still perform as required, even under adverse conditions. Regarding data recovery and state restoration after an interruption, it would be appropriate to establish a disaster recovery plan first and then perform fault-tolerance tests to verify autonomous recovery mechanisms and application integrity following recovery.
+                            To ensure the applications perform as required despite adverse conditions, we plan to apply <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a> practices to evaluate the application's robustness and identify scenarios in which the application can still perform as required, even under adverse conditions. Regarding data recovery and state restoration after an interruption, it would be appropriate to establish a disaster recovery plan first and then perform fault-tolerance tests to verify autonomous recovery mechanisms and application integrity following recovery.
 
                             <h4>Low Priority</h4>
 
@@ -1047,7 +1047,31 @@ a.tips:hover {
                             <p>Property-based testing focuses on verifying software components against inputs generated from defined properties. These properties are set using Boolean expressions that describe the component's high-level behaviour, establishing a formal validation process. Traditional testing often requires developers to craft multiple test scenarios, targeting prominent corner cases manually. </p>
                             <p>In contrast, PBT offers an automated solution. It starts with the generation of random inputs aimed at uncovering faults. If an issue arises, the system isolates the root cause using a "shrinking" method. This process reduces the inputs to the simplest form required to reproduce the failure, allowing for the rapid generation of test cases relevant to different components.</p>
                             <p>In the DSP context, PBT provides more comprehensive test coverage. Tools like FlinkCheck for Apache Flink and the ScalaCheck library for Spark Streaming are a testament to its rising significance. FlinkCheck, for instance, employs a bounded temporal logic, generating input streams and evaluating the output streams of the Flink runtime. Similarly, an API tailored for Spark Streaming facilitates the writing of tests in the Scala functional language in conjunction with the ScalaCheck library.</p>
-                            <p>Further supporting the case for PBT in DSP is its adoption in real-world scenarios. Researchers Espinosa et al. and Riesco et al. have introduced PBT tools for prominent frameworks like Apache Flink and Apache Spark Streaming. Using temporal logic, these tools generate random streams, ensuring the validation of time-related properties. Moreover, with DSP's increasing reliance on APIs, PBT's ability to mock API data is invaluable, particularly during unit and integration tests when actual API services might be inaccessible.</p>
+                            <p>Further supporting the case for PBT in DSP is its adoption in real-world scenarios. Researchers <a href="https://ieeexplore.ieee.org/document/8868163"  target="_blank">Espinosa et al.</a> and <a href="https://www.cambridge.org/core/journals/theory-and-practice-of-logic-programming/article/abs/propertybased-testing-for-spark-streaming/CF65AAF7658E3BAE34AA94C6110DD569"  target="_blank">Riesco et al.</a> have introduced PBT tools for prominent frameworks like Apache Flink and Apache Spark Streaming. Using temporal logic, these tools generate random streams, ensuring the validation of time-related properties. Moreover, with DSP's increasing reliance on APIs, PBT's ability to mock API data is invaluable, particularly during unit and integration tests when actual API services might be inaccessible.</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal Property-based tests-->
+                    <div class="modal fade" id="chaos-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Chaos Engineering </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Chaos Engineering tests the robustness of complex systems by asking a simple question: "Can we trust the systems we deploy?" In distributed systems, this method is a way to measure how a system performs under real-world conditions. Large-scale DSP systems are prime candidates for this testing with their intricate setups and many potential failure points. Big companies, including Netflix, use chaos engineering to test their systems.</p>
+
+                            <p>Failures in DSP are inevitable. Instead of aiming for perfect reliability, chaos engineering focuses on preparing systems for when things go wrong—test applications for infrastructure failures before these issues crop up in production to prevent major damage. As chaos engineering is still consolidating, you may know associated terms like fault injection testing, stability testing, or stress testing.</p>
+
+                            <p>Chaos engineering in DSP aims to improve system reliability. It emphasizes fault tolerance and recoverability. One common approach is to test DSP applications under unusual conditions to see how well they recover. These tests span both software and network layers, considering factors like latency and throughput that can impact DSP timing.</p>
+
+                            <p>The testing also extends to hardware. Challenges include shutting down machines, simulating memory errors, and dealing with CPU or storage issues. There's also the risk of third-party service failures, underscoring the importance of building a resilient system. Tools like Chaos Monkey, Jepsen, and Thundra help practitioners develop these tests. </p>
+
+                            <p>Chaos engineering in DSP can also optimize fault tolerance configurations, finding the right balance between system performance and availability, considering issues like network problems, hardware or software failures, and timing challenges.</p>
                           </div>
                           
                         </div>
