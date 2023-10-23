@@ -336,8 +336,8 @@ a.tips:hover {
                             <ol type="A" fontWeight="bold">
                                 <li><b>Understand the application context:</b> In the planning phase, get a solid understanding of your project’s business context. Identify relevant characteristics that can guide your testing decisions. This could include determining the desired testing objectives and quality characteristics.</li>
                                 <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test preparation, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
-                                <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
-                                <li><b>Document your process:</b> Create technical documents, like UML activity, sequence, and state machine diagrams, to express the inherent characteristics of DSP. This might include details about concurrency and operation states.</li>
+                                <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and potential failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
+                                <li><b>Document your process:</b> Testing-relevant information should be documented and accessible to testers. Produce technical documentation that anticipates information needed for testing activities, such as UML activity, sequence, and state machine diagrams, which express the inherent characteristics of DSP. Such documentation might include details about concurrency and operation states, supporting testers in understanding complex, software-intensive systems.</li>
                             </ol> 
                         </div>
 
@@ -361,34 +361,14 @@ a.tips:hover {
 
 
 
-                                <li><b>Evaluate software quality requirements</b> concerning the application’s characteristics. Discuss with stakeholders the series of questions to prioritise testing objectives according to quality categories: functional suitability, performance efficiency, reliability and maintainability </li>
-                                <li><b>Comprehend quality from the perspective of the business</b> involved in the application.</li>
-                                <li><b>Engage in process stakeholders</b>—business analysts, developers, testers, clients, and users.</li>
+                                <li><b>Evaluate software quality requirements</b> concerning the application’s characteristics. Discuss with stakeholders the <a href="#questions-board" class="internal-link expand-detail-link" data-target="questions-content">Guiding questions to establish test objectives</a> to prioritise testing objectives according to quality categories: functional suitability, performance efficiency, reliability and maintainability </li>
+                                <li><b>Comprehend quality from the perspective of the business</b> involved in the application.</li> Ask about the ideal behavior expected from the application in the context. Map the types of failures and categorize them according to the degree of impact on the business.
+                                <li><b>Engage in process stakeholders</b>—business analysts, developers, testers, clients, and users. Discussing these issues with client-side business analysts will help assess potential business impacts due to varying levels of quality across different categories of the software quality model.</li>
                             </ol>
                             <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
                             
 
-<!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
 
-  </a> -->
-
-
-<!-- <div type="button" class="boxed-title boxed-title-g2 expand-link" href="javascript:void(0);"  data-target="questions-content">
-                            
-                                <div class="row">
-                                    <div class="col-auto d-flex align-items-center">
-                                        <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800;"></i>
-                                    </div>
-                                    <div class="col text-center d-flex align-items-center">
-                                        Guiding questions to establish test objectives
-                                    </div>
-                                </div>
-
-                            </div> -->
 
 
 
@@ -529,20 +509,21 @@ a.tips:hover {
                     <section class="guideline"  id="G3">
                         <h2 style="display: flex;" type="button" href="javascript:void(0);" class="expand-link guideline-title g3-color-dark" data-target="G3-detail">
                             <span class="guideline-prefix g3-background-dark">#G3</span>
-                            <div> SYNC TEAM SKILLS WITH TESTING STRATEGY</div>
+                            <div> MANAGE TESTING TEAM ACCORDING TO TESTING STRATEGY</div>
                         </h2>
                         <div class="left-border left-border-color-g3">
                         <img src="img/requirements.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
-                        <p> The skills of the testing team significantly influence test quality, especially within the DSP context. Ensure that your team is equipped with the necessary expertise to carry out the planned testing activities effectively.</p>
+                        <p> The optimized management and employment of human resources is a way to improve the testing process, especially in the context of DSP, where technical skills and theoretical knowledge are vital. Ensure your team’s work process is well-managed and they possess the required knowledge to carry out planned testing activities effectively.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
 
                         <div class="details" id="G3-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b>Skill Sets:</b> Ensure that the testing activities align with the skills of the testing team.</li>
-                                <li><b>Training:</b> If necessary, consider providing training and development opportunities to enhance the test team’s skills.</li>
-                                <li><b>Workload:</b> Consider the available workload when determining the number and type of test tasks that can be assigned. </li>
+                                <li><b>Skill Sets:</b> Ensure that the testing activities align with the skills of the testing team. Typical skills for testers in the DSP context may include fundamental DSP understanding, distributed systems knowledge, real-time analytics, data modelling, performance, fault tolerance and resiliency testing, and debugging. Additionally, it’s crucial to have team members skilled in developing and automating testing infrastructures, particularly within Continuous Integration/Continuous Deployment (CI/CD) environments.</li>
+                                <li><b>Domain Knowledge:</b> Ensure the team understands the nuances of the DSP architecture they’re testing and the specific industry context where the DSP application will be deployed (finance, telecommunications, marketing, social media feeds, multiplayer games etc).  </li>
+                                <li><b>Training:</b> If necessary, consider providing training and development opportunities to enhance the test team’s skills. Promote a culture of continuous learning within the team to stay updated with evolving DSP technologies and methodologies to anticipate needed skill sets. Motivate participation in DSP workshops, seminars, or conferences for hands-on learning and networking.</li>
+                                <li><b>Workload:</b> Prioritize workload allocation based on the criticality of the testing activities. To ensure balanced task distribution, consider the available workload when determining the number and type of test tasks that can be assigned.  </li>
                             </ol>
                             
                         </div>
@@ -555,11 +536,11 @@ a.tips:hover {
                     <section class="guideline" id="G4">
                         <h2 style="display: flex;"  type="button" href="javascript:void(0);" class="expand-link guideline-title g4-color-dark" data-target="G4-detail">
                             <span class="guideline-prefix g4-background-dark">#G4</span>
-                            <div  > TIME ALLOCATION PLANNING</div>
+                            <div> PLAN TIME ALLOCATION</div>
                         </h2> 
                         <div class="left-border  left-border-color-g4">
                         <img src="img/scheduling.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
-                        <p> Testing can be significantly hampered by time pressure, causing teams to rush or overlook vital activities. It’s essential to plan and optimise time resources meticulously. This guideline offers insights on preventing delays, alleviating time-induced pressure, and sidestepping potential contractual issues.
+                        <p> Testing can be significantly hampered by time pressure, causing teams to rush or overlook vital activities. Especially in the DSP context, creating complex tests can be time-consuming, and executing certain tests, like performance tests, may also take a significant amount of time. It’s essential to plan and optimise time resources meticulously. This guideline offers insights on preventing delays, alleviating time-induced pressure, and sidestepping potential contractual issues.
 </p> 
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
@@ -807,8 +788,23 @@ a.tips:hover {
                         <div class="details" id="G7-detail"  style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. Below, we discuss time-related concerns and associated recommendations more comprehensively.</li>
-                                 <div id="time-issues-board" class="boxed-content boxed-content-g7">
+                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. <a href="#time-issues-board" class="internal-link expand-detail-link" data-target="time-issues-content">Below</a>, we discuss time-related concerns and associated recommendations more comprehensively.</li>
+                                 
+
+                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a>  to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. <a href="#non-determinism-board" class="internal-link expand-detail-link" data-target="non-determinism-content">Next</a>, we bring recommendations regarding issues of non-determinism in DSP context.</li>
+
+                                 
+
+
+                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a> is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. <a href="#fault-tolerance-board" class="internal-link expand-detail-link" data-target="fault-tolerance-content">Following</a> we provide additional information and recommendations regarding fault tolerance.</li>
+                           
+                            
+
+                                
+                            </ol>
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                            <div id="time-issues-board" class="boxed-content boxed-content-g7">
                                 <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="time-issues-content" >
                                     <div class="row">
                                         <div class="col-auto d-flex align-items-center">
@@ -842,9 +838,7 @@ a.tips:hover {
                                 </div>
                             </div>
 
-                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a>  to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. Next, we bring recommendations regarding issues of non-determinism in DSP context.</li>
-
-                                 <div id="non-determinism-board" class="boxed-content boxed-content-g7">
+                            <div id="non-determinism-board" class="boxed-content boxed-content-g7">
                                 <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="non-determinism-content" >
                                     <div class="row">
                                         <div class="col-auto d-flex align-items-center">
@@ -872,12 +866,7 @@ a.tips:hover {
                                 </div>
                             </div>
 
-
-                                 <li><b> Fault tolerance is a significant concern in DSP applications;</b> in this sense, <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a> is the primary strategy for testing fault tolerance and system recoverability. Identifying appropriate fault tolerance mechanisms and testing whether they work suitably is also essential. Common fault tolerance mechanisms in the DSP context are infrastructure redundancy, scalability of hardware and network resources, service redundancy, operation downsizing, application version rollback, operations rollback, and message contract compatibility. Below we provide additional information and recommendations regarding fault tolerance.</li>
-                           
-                            
-
-                                <div id="fault-tolerance-board" class="boxed-content boxed-content-g7">
+                            <div id="fault-tolerance-board" class="boxed-content boxed-content-g7">
                                     <div type="button" class="boxed-title boxed-title-g7 expand-link" href="javascript:void(0);"  data-target="fault-tolerance-content" >
                                         <div class="row">
                                             <div class="col-auto d-flex align-items-center">
@@ -916,12 +905,6 @@ a.tips:hover {
                                         </ol>                            
                                     </div>
                                 </div>
-                            </ol>
-                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
-
-                            
-
-
 
                         </div>
                         </div>                        
@@ -1083,6 +1066,50 @@ a.tips:hover {
 
 
 
+                    <!-- Modal Copy Right-->
+                    <div class="modal fade" id="copy-right-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Copyright Policy </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body" >
+                            
+
+                            <p><strong>Permitted Use:</strong> This material is free for studies, research, training and adoption by professionals in companies as long as the authorship information is properly cited. </p>
+
+                            <p><strong>Reproduction:</strong> Reproducing this material in other media without acknowledging the authorship is not permitted. We encourage sharing via the provided link to the original website.</p>
+
+                            <p><strong>Authorship and Attribution:</strong> This content is a culmination of doctoral research conducted at <a href="https://portal.cin.ufpe.br/" target="_blank">CIn/UFPE</a>. <a href="https://www.linkedin.com/in/alexandre-vianna-38184358/" target="_blank">Alexandre Strapação Guedes Vianna</a> is the primary author, with <a href="https://www.linkedin.com/in/kievgama/" target="_blank">Kiev Santos da Gama</a> serving as the co-author in his capacity as the doctoral advisor.</p>
+
+                            <p ><strong>Research Base:</strong> These guidelines are grounded in two primary studies: 
+                            <ul>
+                                <li style="text-align: left;">Vianna, A., Kamei, F. K., Gama, K., Zimmerle, C., & Neto, J. A. (2023). A Grey Literature Review on Data Stream Processing applications testing. Journal of Systems and Software, 111744. <a href="https://doi.org/10.1016/j.jss.2023.111744" target="_blank">https://doi.org/10.1016/j.jss.2023.111744</a></li>
+                                <li style="text-align: left;">Vianna, A., Ferreira, W., & Gama, K. (2019, September). An exploratory study of how specialists deal with testing in data stream processing applications. In 2019 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (pp. 1-6). IEEE. <a href="https://doi.org/10.1109/ESEM.2019.8870186" target="_blank">https://doi.org/10.1109/ESEM.2019.8870186</a></li>
+                            </ul>
+                            </p>
+
+
+
+
+
+                            <h3>Citation</h3>
+
+                            <p style="text-align: left;"><strong>MLA:</strong><br>
+                            Vianna, Alexandre Strapação Guedes. "Testing Guidelines for Data Stream Processing Applications." <em>alexandresgv.github.io</em>, accessed [15 Oct. 2023], <a href="https://alexandresgv.github.io">https://alexandresgv.github.io</a>.</p>
+
+                            <p style="text-align: left;"><strong>APA:</strong><br>
+                            Vianna, A. S. G. (2023). Testing Guidelines for Data Stream Processing Applications. <em>alexandresgv.github.io</em>. Retrieved [October 15, 2023], from <a href="https://alexandresgv.github.io">https://alexandresgv.github.io</a>.</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
 
 
 
@@ -1100,7 +1127,8 @@ a.tips:hover {
         </main>
 
         <footer class="text-center mt-5">
-            <p>&copy; Written by Alexandre Vianna and Kiev Gama.</p>
+            <p>Written by Alexandre Vianna and Kiev Gama.</p>
+            <p>&copy;<a class="tips" data-bs-toggle="modal" data-bs-target="#copy-right-modal"> Copyright Police. </a> </p>
         </footer>
 
     </div>
@@ -1140,22 +1168,6 @@ a.tips:hover {
 
 
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     let links = document.querySelectorAll('.expand-link');
-
-    //     links.forEach(function(link) {
-    //         link.addEventListener('click', function() {
-    //             let targetId = this.getAttribute('data-target');
-    //             let targetElement = document.getElementById(targetId);
-
-    //             if(targetElement.style.display === "none") {
-    //                 targetElement.style.display = "block";
-    //             } else {
-    //                 targetElement.style.display = "none";
-    //             }
-    //         });
-    //     });
-    // });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
