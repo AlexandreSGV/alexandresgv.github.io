@@ -84,6 +84,10 @@ ol > li::marker {
     }
 
 
+    .inbox-content-g1 {
+        padding: 10px;
+        border: 2px dashed var(--g1-dark);
+    }
 
     .inbox-content-g2 {
         padding: 10px;
@@ -123,7 +127,9 @@ ol > li::marker {
 
     }
 
-
+    .boxed-title-g1 {
+        background-color: var(--g1-light);
+    }
 
     .boxed-title-g2 {
         background-color: var(--g2-light);
@@ -326,19 +332,65 @@ a.tips:hover {
                             <div> COLLECT INFORMATION</div>
                         </h2>
                         <div class="left-border left-border-color-g1">
-                        <img src="img/data-collection.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
-                        <p> Start your testing process by gathering pertinent information for tests. Comprehend the project’s business context, determine test preparation parameters, anticipate adverse conditions and fault tolerance scenarios, and generate detailed technical documentation. </p>
+                        <img src="img/data-collection.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                        <p> Below, we present a list of several information that can be collected in the initial phases of the project. Clearly, the list includes much information that does not apply to all projects, so the recommended use is to filter by the compatibility with the target project. </p>
                         
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
              
                         <div class="details" id="G1-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b>Understand the application context:</b> In the planning phase, get a solid understanding of your project’s business context. Identify relevant characteristics that can guide your testing decisions. This could include determining the desired testing objectives and quality characteristics.</li>
-                                <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test preparation, such as expected inputs and outputs, response time, and expected and maximum data throughput rates.</li>
+                                <li><b>Understand the application context:</b>  In the planning phase, get a solid understanding of your project’s business context. Identify relevant characteristics that can guide your testing decisions. This could include determining the desired testing objectives and quality characteristics. SBE (Specification by Example) aids understanding of the application’s context by developing sample data covering critical use cases.</li>
+                                <li><b>Gather parameters needed for test preparation:</b> Collect information needed for test preparation, such as expected inputs and outputs, response time, and expected and maximum data throughput rates. Test-Driven Development (ATDD) promotes a collaborative environment and helps ensure that crucial information for testing is gathered early on, as it involves stakeholders, including developers, testers, and business representatives, in defining acceptance criteria.</li>
                                 <li><b>Identify potential issues:</b> Understand adverse conditions and fault tolerance scenarios. These could include service interruptions, fluctuations in hardware resources, network fluctuations, variations in demand, and potential failures. Identify probable factors that hinder testing such as timing issues and non-determinism.</li>
-                                <li><b>Document your process:</b> Testing-relevant information should be documented and accessible to testers. Produce technical documentation that anticipates information needed for testing activities, such as UML activity, sequence, and state machine diagrams, which express the inherent characteristics of DSP. Such documentation might include details about concurrency and operation states, supporting testers in understanding complex, software-intensive systems.</li>
-                            </ol> 
+                                <li><b>Document your process:</b> Testing-relevant information should be documented and accessible to testers. Produce technical documentation that anticipates information needed for testing activities, such as UML activity, sequence, and state machine diagrams, which express the inherent characteristics of DSP. Such documentation might include details about concurrency and operation states, supporting testers in understanding complex, software-intensive systems. BPMN notation can also be employed to describe DSP workflows, facilitating communication with business experts. The Imixs-Workflow tool integrates an BPMN workflow engine with Apache Kafka facilitating DSP-based workflow development.
+                                <li><b>Testing people should get involved:</b>Include a test specialist, such as a quality assurance expert, during the information-gathering phase in order to ensure the collection of test-relevant information early on, thus minimizing potential issues arising from a lack of such information in later stages.</li>
+                                <li><b>Balance agility and robust planning:</b> The agility of the development process should not compromise the depth and quality of testing in DSP projects. For example, inadequate quality requirements testing specifications and insufficient integration testing can result in the discovery of defects at the end of the software life cycle. Large-scale and complex DSP applications require well-mapped requirements for testing.</li>
+
+                                <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> <i class="bi bi-plus-circle-fill"></i> </a>
+                                </li>
+                            </ol>
+
+                            <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+
+                            <div id="time-issues-board" class="boxed-content boxed-content-g1">
+                                <div type="button" class="boxed-title boxed-title-g1 expand-link" href="javascript:void(0);"  data-target="collection-data-content" >
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center">
+                                            <i class="bi bi-arrow-bar-down" style="font-size: 26px; font-weight: 800; padding-left: 8px; margin: 0px;"></i>
+                                        </div>
+                                        <div class="col text-center d-flex align-items-center">
+                                            Information to be collected
+                                        </div>
+                                    </div>                                
+                                </div>
+
+                                <div id="collection-data-content" class="inbox-content-g1"  style="display: none;"   >
+                                    <div style="padding: 10px;">
+                                    <img src="img/data-collection-2.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                                    Below, we present a list of several information that can be collected in the initial phases of the project. Clearly, the list includes much information that does not apply to all projects, so the recommended use is to filter by the compatibility with the target project.</div>
+                                    <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
+                                    <ol type="1" fontWeight="bold">
+                                        <li>Identifying message formats and schema structure.</li>
+                                        <li>Mapping data stream producers and consumers.</li>
+                                        <li>Identifying dependency of third-party services (APIs, data sources): Include details about data source reliability, consistency, and frequency of updates.</li>
+                                        <li>Mapping the stream data process that leads to automatic business decisions/actions and manual decisions via dashboards.</li>
+                                        <li>Checking whether the business model is compatible with data post-processing in downtime scenarios: Identify alternative data processing strategies for maintaining business continuity.</li>
+                                        <li>Mapping response times, throughput rates, and time-out durations.</li>
+                                        <li>Data validity: Duration of data retention in cache.</li>
+                                        <li>Potential data loss considerations: Include strategies for data recovery and redundancy.</li>
+                                        <li>Identifying transaction semantics:  Atomicity, Durability, Ordering Guarantees, and Exactly-Once Processing.</li>
+                                        <li>Identifying data availability for test purposes (historical, synthetic, or custom example data): Evaluate the representativeness and quality of the test data.</li>
+                                        <li>Confidentiality and privacy features: Assess compliance with international standards like GDPR and industry-specific regulations. What are the PII (Personally Identifiable Information) in the data set?</li>
+                                        <li>Error Handling and Recovery Procedures: Document how the system handles failures, errors, and retries.</li>
+                                        <li>State Management in Stream Processing: Identify how the state is managed, maintained, and accessed in the system.</li>
+                                        <li>Scalability and Load Balancing Strategies: Understand how the system should scale and manage varying loads.</li>
+                                        <li>Data Transformation and Processing Logic: Detail the logic and algorithms used in processing the data streams.</li>
+                                        <li>Version Control and Schema Evolution: How schema changes are managed and versioned over time.</li>
+
+                                    </ol>                            
+                                    </div>
+                                </div>
                         </div>
 
                         </div>
@@ -349,30 +401,19 @@ a.tips:hover {
                             <div  > ESTABLISH TEST OBJECTIVES</div>
                         </h2>
                         <div class="left-border left-border-color-g2">
-                        <img src="img/goal.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                        <img src="img/goal.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                         <p> Define clear testing objectives to guide your testing strategy and resource allocation. Each application’s unique features dictate specific quality requirements. It’s crucial to align these characteristics with desired quality standards, emphasising the importance of understanding quality from the business perspective.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
              
                         <div class="details" id="G2-detail" style="display: none;">
-                            <img src="img/discussion.png" alt="Descrição da imagem" style="float: right; margin-left: 40px; width: 128px; height: 128px;">
+                            <img src="img/discussion.png" alt="-" style="float: right; margin-left: 40px; width: 128px; height: 128px;">
                             <ol type="A" fontWeight="bold">
-                                
-
-
-
-                                <li><b>Evaluate software quality requirements</b> concerning the application’s characteristics. Discuss with stakeholders the <a href="#questions-board" class="internal-link expand-detail-link" data-target="questions-content">Guiding questions to establish test objectives</a> to prioritise testing objectives according to quality categories: functional suitability, performance efficiency, reliability and maintainability </li>
-                                <li><b>Comprehend quality from the perspective of the business</b> involved in the application.</li> Ask about the ideal behavior expected from the application in the context. Map the types of failures and categorize them according to the degree of impact on the business.
-                                <li><b>Engage in process stakeholders</b>—business analysts, developers, testers, clients, and users. Discussing these issues with client-side business analysts will help assess potential business impacts due to varying levels of quality across different categories of the software quality model.</li>
+                                <li><b>Evaluate software quality requirements concerning the application’s characteristics:</b> Discuss with stakeholders the <a href="#questions-board" class="internal-link expand-detail-link" data-target="questions-content">Guiding questions to establish test objectives</a> to prioritise testing objectives according to quality categories: functional suitability, performance efficiency, reliability and maintainability. When establishing testing objectives, consider the trade-offs between the different categories of the quality model. For example, by focusing on reliability, you may be reducing performance efficiency. </li>
+                                <li><b>Comprehend quality from the perspective of the business involved in the application:</b>  Ask about the ideal behaviour expected from the application in the context. Map the types of failures and categorize them according to the degree of impact on the business. </li>
+                                <li><b>Involve stakeholders in the testing objective setting process:</b> Business analysts, developers, DevOps, testers, clients, and users. Discussing these issues with client-side business analysts will help assess potential business impacts due to varying levels of quality across different categories of the software quality model.</li>
                             </ol>
                             <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
-                            
-
-
-
-
-
-
 
                             <div id="questions-board" class="boxed-content">
                                 <div type="button" class="boxed-title boxed-title-g2 expand-link" href="javascript:void(0);"  data-target="questions-content">
@@ -390,8 +431,8 @@ a.tips:hover {
 
                             <div id="questions-content" class="inbox-content-g2" style="display: none;">
                             
-                            <p><b>FUNCTIONAL SUITABILITY</b></p>
-                            <img src="img/verified.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            <p width="100%" align="center" style="font-size: 18px"><b>FUNCTIONAL SUITABILITY</b></p>
+                            <img src="img/verified.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                             <i style="text-decoration: underline;">Q-A How critical is the correctness of the results delivered by the application?</i>
 
                         
@@ -411,8 +452,8 @@ a.tips:hover {
                                 <li> <b> Monitoring: </b>Use application monitoring tools, such as Grafana, to gather result accuracy metrics and facilitate the analysis of the application's performance.</li>
                             </ol>
 
-                            <p><b>PERFORMANCE EFFICIENCY</b></p>
-                            <img src="img/benchmark.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            <p width="100%" align="center" style="font-size: 18px"><b>PERFORMANCE EFFICIENCY</b></p>
+                            <img src="img/benchmark.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
 
                             <i style="text-decoration: underline;">Q-C How critical are the time requirements (e.g., delay, response time)?</i>
                             <ol type="1" fontWeight="bold">
@@ -451,8 +492,8 @@ a.tips:hover {
 
 
 
-                            <p><b>RELIABILITY</b></p>
-                            <img src="img/insignia.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            <p width="100%" align="center" style="font-size: 18px"><b>RELIABILITY</b></p>
+                            <img src="img/insignia.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                             <i style="text-decoration: underline;">Q-G How significant is the application's reliability during regular operation?</i>
                             <ol type="1" fontWeight="bold">
                                 <li> <b> Reliability Parameters: </b>Establish parameters to measure application reliability during regular operation.</li>
@@ -483,8 +524,8 @@ a.tips:hover {
                             </ol>
 
 
-                            <p><b>MAINTAINABILITY</b></p>
-                            <img src="img/maintenance.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                            <p width="100%" align="center" style="font-size: 18px"><b>MAINTAINABILITY</b></p>
+                            <img src="img/maintenance.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
 
 
                             <i style="text-decoration: underline;">Q-K What is the priority for evolving the application without introducing defects or degrading quality?</i>
@@ -512,7 +553,7 @@ a.tips:hover {
                             <div> MANAGE TESTING TEAM ACCORDING TO TESTING STRATEGY</div>
                         </h2>
                         <div class="left-border left-border-color-g3">
-                        <img src="img/requirements.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                        <img src="img/requirements.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                         <p> The optimized management and employment of human resources is a way to improve the testing process, especially in the context of DSP, where technical skills and theoretical knowledge are vital. Ensure your team’s work process is well-managed and they possess the required knowledge to carry out planned testing activities effectively.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
@@ -520,10 +561,10 @@ a.tips:hover {
                         <div class="details" id="G3-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b>Skill Sets:</b> Ensure that the testing activities align with the skills of the testing team. Typical skills for testers in the DSP context may include fundamental DSP understanding, distributed systems knowledge, real-time analytics, data modelling, performance, fault tolerance and resiliency testing, and debugging. Additionally, it’s crucial to have team members skilled in developing and automating testing infrastructures, particularly within Continuous Integration/Continuous Deployment (CI/CD) environments.</li>
-                                <li><b>Domain Knowledge:</b> Ensure the team understands the nuances of the DSP architecture they’re testing and the specific industry context where the DSP application will be deployed (finance, telecommunications, marketing, social media feeds, multiplayer games etc).  </li>
-                                <li><b>Training:</b> If necessary, consider providing training and development opportunities to enhance the test team’s skills. Promote a culture of continuous learning within the team to stay updated with evolving DSP technologies and methodologies to anticipate needed skill sets. Motivate participation in DSP workshops, seminars, or conferences for hands-on learning and networking.</li>
-                                <li><b>Workload:</b> Prioritize workload allocation based on the criticality of the testing activities. To ensure balanced task distribution, consider the available workload when determining the number and type of test tasks that can be assigned.  </li>
+                                <li><b>Skill Sets:</b> Ensure that the testing activities align with the skills of the testing team. Typical skills for testers in the DSP context may include fundamental DSP understanding, DSP architectures, DSP platforms, distributed systems knowledge, real-time analytics, data modelling, performance, fault tolerance and resiliency testing, and debugging. Additionally, it is crucial to have team members skilled in developing and automating testing infrastructures, such as DevOps, particularly within Continuous Integration/Continuous Deployment (CI/CD) environments. </li>
+                                <li><b>Training:</b> If necessary, consider providing training and development opportunities to enhance the test team’s skills. Promote a culture of continuous learning within the team to stay updated with evolving DSP technologies and methodologies to anticipate needed skill sets. Motivate participation in DSP workshops, seminars, or conferences for hands-on learning and networking. Training data-specialized quality assurance professionals can be a long-term plan within companies.</li>
+                                <li><b>Workload:</b> Prioritize workload allocation based on the criticality of the testing activities. To ensure balanced task distribution, consider the available workload when determining the number and type of test tasks that can be assigned. </li>
+                                <li><b>Domain Knowledge:</b>  Ensure the team understands the nuances of the specific industry context where the DSP application will be deployed (finance, telecommunications, marketing, social media feeds, multiplayer games, etc). For example, in the context of finance, many rules and security considerations play a significant role in shaping the testing strategy.  </li>
                             </ol>
                             
                         </div>
@@ -539,7 +580,7 @@ a.tips:hover {
                             <div> PLAN TIME ALLOCATION</div>
                         </h2> 
                         <div class="left-border  left-border-color-g4">
-                        <img src="img/scheduling.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                        <img src="img/scheduling.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
                         <p> Testing can be significantly hampered by time pressure, causing teams to rush or overlook vital activities. Especially in the DSP context, creating complex tests can be time-consuming, and executing certain tests, like performance tests, may also take a significant amount of time. It’s essential to plan and optimise time resources meticulously. This guideline offers insights on preventing delays, alleviating time-induced pressure, and sidestepping potential contractual issues.
 </p> 
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
@@ -547,12 +588,13 @@ a.tips:hover {
                         <div class="details" id="G4-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b> Allocate time in the project schedule for critical activities</b>, including the development of test cases, configuration of environments, creation of test datasets, execution of tests, and analysis of results.   </li>
-                                <li><b> Consider the complexity of the activity, the time required for test execution,</b> and the number of test cases involved when estimating the time required for each testing activity.   </li>
-                                <li><b> Prioritise activities based on test objectives </b> and project characteristics, as detailed in Guideline <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>. </li>
-                                <li><b> Develop the testing schedule by considering the priority and estimated time required for each testing activity,</b> the available time in the schedule, and the feasible workload.   </li>
-                                <li><b>  Employ automated test case generation techniques,</b> such as <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests</a>, to get many basic test cases quickly. </li>
-                                <li><b> Gradually initiate the automation of the testing infrastructure as the application gains stability,</b> prioritising the most time-consuming activities.   </li>
+                                <li><b>Allocate time in the project schedule for critical activities,</b> including the development of test cases, configuration of environments, creation of test datasets, execution of tests, and analysis of results. In summary, there are two dimensions of time resources: planning time and execution time.</li>
+                                <li><b>Consider the complexity of the activity,</b> the time required for test execution, and the number of test cases involved when estimating the time required for each testing activity.</li>
+                                <li><b> Prioritise activities based on test objectives</b>  and project characteristics, as detailed in <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>. </li>
+                                <li><b> Develop the testing schedule by considering the priority and estimated time required</b> for each testing activity, the available time in the schedule, and the feasible workload.</li>
+                                <li><b>  Employ automated test case generation techniques,</b> such as <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests</a>, to get many basic test cases quickly.</li>
+                                <li><b>Gradually initiate the automation of the testing infrastructure</b> as the application gains stability, prioritising the most time-consuming activities.</li>
+                                <li><b>Accommodate Time-Consuming Tests in Agile Development Processes:</b> System-level tests, especially those involving large-scale volumes of data such as performance tests, demand more accurate time allocation. Tests involving external dependencies (data sources or third-party services) and teams must be carefully scheduled and coordinated with those managing these services, which generally deviates from the flow of sprints. Therefore, adapt your agile process to accommodate time-consuming tests, particularly in large-scale projects.</li>
                             </ol>
                             
 
@@ -573,7 +615,7 @@ a.tips:hover {
                             <div  > PLAN FINANCIAL RESOURCE ALLOCATION</div>
                         </h2>
                         <div class="left-border  left-border-color-g5">
-                         <img src="img/budget.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                         <img src="img/budget.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                         <p> Financial resources are vital for testing DSP applications. Resources are required for numerous activities, including hardware hiring, service outsourcing, training, consultancy, software acquisition, and test infrastructure maintenance. Therefore, it is a precaution to anticipate allocating financial resources to guarantee resources for top-priority testing tasks. </p> 
                          <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
@@ -581,8 +623,12 @@ a.tips:hover {
                            
                             <ol type="A" fontWeight="bold">
                                 <li><b>Test Objectives Alignment: </b> Ensure that the allocation of financial resources aligns with the testing objectives outlined in <a href="#G2" class="internal-link expand-detail-link" data-target="G2-detail">#G2</a>, and then prioritise investments that drive the most significant impact on achieving these objectives.</li>
-                                <li><b>Comprehensive Costing: </b> Account for all potential costs related to the testing process, includ- ing infrastructure (hardware, cloud services), personnel (in-house tester salaries, training fees), consultancy contracts, contracting of services and tools (e.g., test frameworks and third-party services used in tests), and the ongoing maintenance and evolution of the testing infrastructure.</li>
+                                <li><b>Comprehensive Costing: </b> Account for all potential costs related to the testing process, including infrastructure (hardware, cloud services), personnel (in-house tester salaries, training fees), consultancy contracts, contracting of services and tools (e.g., test frameworks and third-party services used in tests), and the ongoing maintenance and evolution of the testing infrastructure. We highlight that testing expenses are particularly significant in large-scale projects, especially if it is necessary to replicate large and complex infrastructures in test environments faithfully.</li>
                                 <li><b>Cost-Reduction Strategies: </b> Implement strategies to minimise costs, consider strategies such as infrastructure automation, optimising the use of on-demand paid hardware resources, employing open-source tools, and utilising mock infrastructure and services. Evaluate the cost-effectiveness of cost-reduction strategies against test efficacy.</li>
+
+                                <li><b>Policies on the Use of Cloud Resources: </b>Machine allocation for testing on cloud-based testing environments can represent a high financial cost to the project. In this sense, we recommend establishing internal policies to schedule and execute financially intensive tests. </li>
+                                <li><b>Financial Impact of Load Testing: </b>Usually, load testing is a financially demanding activity requiring an infrastructure similar to the production environment. This is particularly crucial in projects with very restrictive Service Level Agreements (SLAs). Be prepared to identify whether your project will require resources for this type of testing.</li>
+                                <li><b>Test to Validate the Architecture: </b> It is essential to validate architectural decisions in the DSP context, especially in large and complex projects where adjusting the architecture at advanced phases can incur considerable costs.</li>
                             </ol>
                            
 
@@ -596,25 +642,25 @@ a.tips:hover {
                             <div > DEVELOP A TEST DATA STRATEGY</div>
                         </h2>
                         <div class="left-border  left-border-color-g6">
-                         <img src="img/data-server.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                         <img src="img/data-server.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                         <p> Test data should effectively identify application defects, confirm feature functionality as intended, and ensure compliance with non-functional requirements. This guideline highlights the primary sources of test data and provides insights and recommendations to assist in developing a test data set. It also includes a summary of data quality characteristics pertinent to DSP application testing.</p> 
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                         <div class="details" id="G6-detail" style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                <li><b>Consider ISO/IEC 25012 data quality attributes to assess your test data set:</b> Accuracy, Credibility, Currentness, Compliance and Confidentiality. Check <a href="#data-quality-board" class="internal-link expand-detail-link" data-target="data-quality-content">Data Quality Characteristics Board</a>
-                                for detailed descriptions.</li>
+                                <li><b>Consider data quality attributes to assess your test data set:</b>  Accuracy, Credibility, Currentness, Compliance and Confidentiality. Check <a href="#data-quality-board" class="internal-link expand-detail-link" data-target="data-quality-content">Data Quality Characteristics Board</a>
+                                for detailed descriptions for detailed descriptions ISO/IEC 25012 data quality attributes. The Great Expectations tool is recommended for evaluating the test data quality, especially synthetically generated. Furthermore, this tool can monitor and issue data quality alerts for the production pipeline. </li>
                                     
                                 <li><b>Combine diverse test data sources and generation techniques</b> to enhance data variety and mitigate potential biases associated with individual techniques.</li>
 
-                                <li><b>Do not over-rely on historical data,</b> as its effectiveness might be limited due to many never manifested defects in production. Historical data's currentness may also be compromised, as it does not exercise new features and could become incompatible with future application versions.</li>
+                                <li><b>Do not over-rely on historical data, </b> as its effectiveness might be limited due to many never manifested defects in production. Historical data's currentness may also be compromised, as it does not exercise new features and could become incompatible with future application versions.</li>
 
                                 <li><b>Improve historical data efficiency by utilizing semi-synthetic data generation strategies</b> such as mutation, machine learning and manual customization. Check <a href="#semi-synthetic-data-board" class="internal-link expand-detail-link" data-target="semi-synthetic-data-content">Semi-Synthetic Data Board</a> for details.</li>
 
-                                <li><b>Maintain vigilance over the data schema,</b> and utilize tools such as Avro for version management and compatibility, to minimize issues throughout the schema's evolution.</li>
+                                <li><b>Maintain vigilance over the data schema</b> by employing tools such as Apache Avro to prevent contract breaks in your pipeline and Apache Delta to manage and minimize issues throughout the schema's evolution.</li>
                                     
-                                <li><b>Adhere to privacy regulations,</b> such as GDPR, during test data handling to prevent legal issues. Utilize approaches like machine learning and shadow mode running to safeguard confidential information when mirroring production data, as outlined in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>.</li>
+                                <li><b>Adhere to privacy regulations,</b> such as GDPR, during test data handling to prevent legal issues. Utilize approaches like machine learning and shadow mode running to safeguard confidential information when mirroring production data, as outlined in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>. Some examples of anonymization techniques are redaction, replacement, masking, crypto-based tokenization, bucketing, date shifting, and time extraction. However, we emphasize that these processes are labour-intensive and time-consuming, as scripts and procedures must be tailored for each case.
                                     
                                 <li><b>The <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based </a> data generation is a cost-effective approach,</b> as it is fast and easy to apply, making it suitable when time and resources for generating test data are limited.</li>
 
@@ -641,18 +687,18 @@ a.tips:hover {
 
                                 </div>
                                 <div class="inbox-content-g6" id="data-quality-content"   style="display: none;">
-                                <img src="img/data-quality.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                <img src="img/data-quality.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                                     <ol type="1" fontWeight="bold">
-                                        <li> <b>Accuracy: </b> Data accurately represents the intended attribute values of a concept or event within the application context. DSP applications' operations and filters can be highly sensitive; testing such functionalities relies on the precision and relevance of values corresponding to the variable's concept.</li>
+                                        <li> <b>Accuracy: </b>  Data accurately represents the intended attribute values of a concept or event within the application context. DSP applications' operations and filters can be highly sensitive; testing such functionalities relies on the precision and relevance of values corresponding to the variable's concept.</li>
 
-                                        <li> <b>Credibility: </b> This concerns the data’s authenticity or whether it is believable as real-world data from the application's usage context. Addressing credibility in the DSP context is more complex due to additional factors, such as the temporal distribution of data, frequency of variable values, and intervals between messages. Furthermore, the 4Vs of Big Data (volume, velocity, variety, and veracity) introduce unique aspects to stream data. </li>
+                                        <li> <b>Credibility: </b> This concerns the data’s authenticity or whether it is believable as real-world data from the application's usage context. Addressing credibility in the DSP context is more complex due to additional factors, such as the temporal distribution of data, frequency of variable values, and intervals between messages. Furthermore, the 4Vs of Big Data (volume, velocity, variety, and veracity) introduce unique aspects to stream data.  </li>
 
 
-                                        <li> <b>Currentness: </b> This relates to the data's age validity. Data characteristics can change over time in the DSP context, making them ineffective for testing (similar to how concept drift affects ML algorithms). Furthermore, application updates may cause data to be incompatible with newer application versions.</li>
+                                        <li> <b>Currentness: </b> This relates to the data's age validity. Data characteristics can change over time in the DSP context, making them ineffective for testing (similar to how concept drift affects ML algorithms). Furthermore, application updates may cause data to be incompatible with newer application versions. Establishing policies for data lifecycle management can help address these issues.</li>
 
-                                        <li> <b>Compliance: </b> This involves data adhering to standards and conventions. DPS applications can consist of numerous entities interacting through various message patterns. At this point, test data must be compatible with the data structures in use. Adaptations may be necessary, and message schema management tools provide functionalities to provide compatibility between different message standards.</li>
+                                        <li> <b>Compliance: </b> This involves data adhering to standards and conventions. DPS applications can consist of numerous entities interacting through various message patterns. At this point, test data must be compatible with the data structures in use. Adaptations may be necessary, and message schema management tools provide functionalities to provide compatibility between different message structures. In addition to structure, there are issues with standards and formatting not captured by schema management, like incompatible text encodings, GPS data coordinate patterns, variations between metric and imperial systems, and conflicts between signed and unsigned data.</li>
 
-                                        <li> <b>Confidentiality: </b> This concerns preserving privacy and protecting sensitive information. DSP applications often operate in contexts involving confidential or sensitive data, such as personal, geo-location data, and financial data. Strategies to maintain the confidentiality of real data include anonymization, masking, using artificial intelligence techniques, and mirroring production data in shadow mode (details in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>).</li>
+                                        <li> <b>Confidentiality: </b> This concerns protecting sensitive information. DSP applications often operate in contexts involving confidential or sensitive data, such as personal, geo-location data, and financial data. Strategies to maintain the confidentiality of real data include anonymization, masking, using artificial intelligence techniques, and mirroring production data in shadow mode (details in <a href="#mirroring-production-board" class="internal-link expand-detail-link" data-target="mirroring-production-content">Mirroring Production Data</a>).</li>
                                     </ol>                            
                                 </div>
                             </div>
@@ -671,7 +717,7 @@ a.tips:hover {
 
                                 <div id="historical-data-content" class="inbox-content-g6"  style="display: none;"   >
                                     <div style="padding: 10px;">
-                                    <img src="img/historical-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    <img src="img/historical-data.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                                     Historical data are assumed to be real data extracted from the application in production, which should also include metadata regarding temporal properties such as origin timestamps, network delay, and processing time. Historical data provides an initial model of data streams in the production environment.</div>
                                     <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
                                     <ol type="1" fontWeight="bold">
@@ -696,9 +742,9 @@ a.tips:hover {
 
                                 </div>
                                 <div id="mirroring-production-content" class="inbox-content-g6" style="display: none; padding: 8px;" >
-                                    <p>In this approach, replicas of the input data stream are redirected from the production environment to the testing environment, enabling the application to be tested with real data. This strategy allows the detection of critical failures that could disrupt the application's execution and facilitates the comparison of performance parameters and results accuracy across different application versions. Additionally, this strategy can be employed while ensuring privacy and data security through mechanisms such as shadow mode, which conducts automatic verification of parameters and execution results. Implementing this technique requires the availability of resources to replicate the infrastructure and skilled professionals to build the verification mechanism.</p>
+                                    <p>In this approach, replicas of the input data stream are redirected from the production environment to the testing environment, enabling the application to be tested with real data. This strategy allows the detection of critical failures that could disrupt the application's execution and facilitates the comparison of performance parameters and results accuracy across different application versions. Additionally, this strategy can be employed while ensuring privacy and data security through mechanisms such as shadow mode, which conducts automatic verification of parameters and execution results. Shadow mode, a finding from the GLR, is discussed in more detail within the article. Implementing this technique requires the availability of resources to replicate the infrastructure and skilled professionals to build the verification mechanism.</p>
                                     
-                                    <img src="img/mirroring-data-process-2.png" alt="Descrição da imagem" style="width: 100%;">
+                                    <img src="img/mirroring-data-process-2.png" alt="-" style="width: 100%;">
                                                           
                                 </div>
 
@@ -720,11 +766,11 @@ a.tips:hover {
 
 
                                 <div id="synthetic-data-content" class="inbox-content-g6" style="display: none; padding: 8px;">
-                                    <img src="img/synthetic-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
-                                    This type of data is generated automatically without using real data in the process. Techniques within this category range from simple random data generation to more sophisticated approaches based on Artificial Intelligence.
+                                    <img src="img/synthetic-data.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    This type of data is generated automatically without using real data in the process. Techniques within this category range from simple random data generation to more sophisticated approaches based on Artificial Intelligence. 
                                     <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
                                     <ol type="1" fontWeight="bold">
-                                        <li> <b>Property-based Data Generation:</b> generates data by exploiting the message contract properties of the data stream. The technique can generate immense amounts of data which can be refined by a process called shrinking, where the objective is to find the minimum data set to manifest the failure. this is a low-cost technique that requires effort to prepare and is, therefore, quick and easy to apply. The following tools support this technique FlinkCheck, ScalaCheck, StreamData, and Ecto Stream Factory. (Check detais on <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests.</a>) </li>
+                                        <li> <b>Property-based Data Generation:</b> generates data by exploiting the message contract properties of the data stream. The technique can generate immense amounts of data, which can be refined by a process called shrinking, where the objective is to find the minimum data set to manifest the failure. this is a low-cost technique that requires effort to prepare and is, therefore, quick and easy to apply. The following tools support this technique: FlinkCheck, ScalaCheck, StreamData, and Ecto Stream Factory. (Check detais on <a class="tips" data-bs-toggle="modal" data-bs-target="#property-based-tests-modal"> property-based tests.</a>) </li>
 
                                           
                                         <li> <b>Statistical Properties-Based Generation:</b> results in more accurate data by configuring the generated data's statistical distribution and the temporal variations in the data distribution. This approach requires a solid understanding of mathematics and statistics. Custom scripts can be built using statistical libraries like Scipy in combination with fake data generation libraries. Pay-per-use services like Mockaroo offer ready-to-use solutions where users simply specify data generation properties.</li>
@@ -752,7 +798,7 @@ a.tips:hover {
                                 </div>
 
                                 <div id="semi-synthetic-data-content" class="inbox-content-g6" style="display: none; padding: 8px;">
-                                    <img src="img/semi-synthetic-data.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
+                                    <img src="img/semi-synthetic-data.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                        
                                     This approach combines synthetic data generation with real-world data and may also involve customization steps. This strategy can be beneficial for increasing test coverage of historical data and adapting data to address more complex test cases.
                                     <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
                                     <ol type="1" fontWeight="bold">
@@ -781,17 +827,17 @@ a.tips:hover {
                         </h2>
                                     
                         <div class="left-border  left-border-color-g7"> 
-                        <img src="img/issue.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                        <img src="img/issue.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
                         <p> DSP applications have specific characteristics that must be considered during test planning and execution. This guideline highlights three particular concerns: timing issues, the non-deterministic nature of distributed DSP, and fault tolerance requirements. Each concern is briefly introduced, followed by relevant observations and recommendations for associated testing strategies.</p>
                         <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
 
                         <div class="details" id="G7-detail"  style="display: none;">
                             
                             <ol type="A" fontWeight="bold">
-                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balance result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider tools like the Awaitility library to synchronize operations during testing. <a href="#time-issues-board" class="internal-link expand-detail-link" data-target="time-issues-content">Below</a>, we discuss time-related concerns and associated recommendations more comprehensively.</li>
+                                 <li><b> Keep in mind time-related factors during testing,</b> such as message ordering, timeouts, delays, and response time requirements. We recommend practices like controlling the system clock to simulate the production environment's timing characteristics, accelerating the clock to speed up testing, and adjusting the processing time interval to maintain a balanced result precision and computational load. Test the system's ability to handle out-of-order data, a common occurrence in DSP applications. Utilize a checkpoint system to preserve consistent snapshots of all timer states. Consider the clock control features present in stream processing platforms and tools like the Awaitility library to synchronize operations during testing. <a href="#time-issues-board" class="internal-link expand-detail-link" data-target="time-issues-content">Below</a>, we discuss time-related concerns and associated recommendations more comprehensively.</li>
                                  
 
-                                 <li><b> Don't neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting <a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> chaos engineering </a>  to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. <a href="#non-determinism-board" class="internal-link expand-detail-link" data-target="non-determinism-content">Next</a>, we bring recommendations regarding issues of non-determinism in DSP context.</li>
+                                 <li><b> Do not neglect the non-deterministic behaviour of DSP,</b> which can cause the application to deliver varied results across multiple executions. Recommended approaches include the deterministic replay to identify and manage non-deterministic variables during testing and the creation of test oracles by setting acceptable thresholds for result variations. Cogitate adopting chaos engineering to check the system's robustness under non-deterministic conditions. Testers should also be aware of common non-deterministic bugs, such as race conditions, ordering issues, state inconsistencies, and problems related to lost, duplicate and delayed messages and timeouts. <a href="#non-determinism-board" class="internal-link expand-detail-link" data-target="non-determinism-content">Next</a>, we bring recommendations regarding issues of non-determinism in DSP context.</li>
 
                                  
 
@@ -818,11 +864,11 @@ a.tips:hover {
 
                                 <div id="time-issues-content" class="inbox-content-g7"  style="display: none;"   >
                                     <div style="padding: 10px;">
-                                    <img src="img/clock-engine.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                                    <img src="img/clock-engine.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
                                     Testing DSP applications requires understanding how time operates in production and testing environments. In production, the timing characteristics of data stream messages are inherent to the business context. However, these timings will differ in the test environment and can affect the validity of test results.</div>
                                     <div style="clear: both;"></div> <!-- Isso limpa o float para garantir que elementos subsequentes não se sobreponham ou flutuem ao redor da imagem. -->
                                     <ol type="1" fontWeight="bold">
-                                        <li> <b>Clock Simulation:</b> Clock Simulation: Controlling the system clock in the test environment is essential to emulate the time aspects of the production scenario as closely as possible. This feature is particularly useful for testing temporal windows, as the number of messages in each window can vary depending on the intervals between messages. The same applies to testing algorithms and functions that evaluate time factors, be aware of how the frequency of event generation in your test environment could influence test outcomes. </li>
+                                        <li> <b>Clock Simulation:</b> Controlling the system clock in the test environment is essential to emulate the time aspects of the production scenario as closely as possible. This feature is particularly useful for testing temporal windows, as the number of messages in each window can vary depending on the intervals between messages. The same applies to testing algorithms and functions that evaluate time factors. Be aware of how the event generation frequency in your test environment could influence test outcomes.  </li>
                                       
 
                                         <li> <b>Speeding up the clock:</b> Speeding up the clock in the test environment is a valuable strategy to minimize the duration of tests. Many stream processing platforms provide functions that allow for clock manipulation, including skipping certain test cycles, generating artificial watermarks, and configuring event timestamps to match an accelerated timeline. However, it's necessary to balance speed with result accuracy when employing this approach. Excessive acceleration of the clock may lead to losses in precision, which could obscure potential issues in the application. Essentially, if the test clock runs too fast, bugs tied to specific timing scenarios may go undetected.</li>
@@ -830,7 +876,7 @@ a.tips:hover {
 
                                         <li> <b>Adjusting the Processing Time Interval:</b> Calibrating the processing time interval is also crucial in testing DSP applications. Longer intervals can yield inaccurate results, while shorter intervals result in more frequent updates and more accurate results but at the expense of increased computational overhead.</li>
 
-                                        <li> <b>Checkpointing Mechanisms:</b> This is a valuable mechanism that periodically stores consistent snapshots of all states in timers and stateful operators, including connectors, windows, and any user-defined state. Platforms like Apache Flink come with built-in checkpointing features. This approach provides valuable state data to reproduce conditions in specific testing scenarios. </li>
+                                        <li> <b>Checkpointing Mechanisms:</b> This is a valuable mechanism that periodically stores consistent snapshots of all states in timers and stateful operators, including connectors, windows, and any user-defined state. Platforms like Apache Flink come with built-in checkpointing features. This approach provides valuable state data to reproduce conditions in specific testing scenarios.  </li>
 
                                         <li> <b>Testing Asynchronous Operations:</b> Asynchronous operations are particularly tricky to test, as firing an event may involve timeouts and manipulating states stored in stateful operators. Testing these operations requires special attention due to their non-linear execution, and it's crucial to ensure that your testing environment can accurately monitor, manage, and validate these operations. One recommended tool for handling asynchronous operations is the Awaitility library, as it supports testing asynchronous operations by synchronizing these operations during the test, enabling the test to wait until certain pre-set conditions are met.</li>
 
@@ -852,14 +898,15 @@ a.tips:hover {
 
                                 <div id="non-determinism-content" class="inbox-content-g7"  style="display: none;"  >
                                     <div style="padding: 10px;">
-                                        <img src="img/non-deterministic.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
+                                        <img src="img/non-deterministic.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">                       
                                         The non-determinism of DSP applications adds a layer of complexity to the testing process. The potential for different results to be produced in multiple runs complicates the result's consistency and the establishment of accurate test oracles. Non-determinism manifests at the system level when numerous variables contributing to non-determinism are present simultaneously. Several characteristics intrinsic to DSP applications, such as stateful operations, window-based operations, concurrent operations, and out-of-order messages, make applications inherently non-deterministic. DSP application functionalities often involve complex processes, encompassing multiple sequential and concurrent transformations. They may also rely on temporal windows and keep numerous shared states. Such functionalities tend to exhibit variation in their results when subjected to fluctuating network delays or changes in message order from data producers, complicating the construction of reliable test oracles.
                                     </div>
                                     <ol type="1" fontWeight="bold">
-                                        <li><b>Test Oracle Construction:</b> Establish acceptable thresholds for result variations during oracle construction. Then, statistical methods can be used to validate whether the observed variations align with the predetermined limits.</li>
-                                        <li><b>Deterministic Replay:</b> This approach involves managing and identifying variables contributing to non-determinism, thus providing better control during test execution. </li>
+                                        <li><b>Test Oracle Construction:</b> Establish acceptable thresholds for result variations during test oracle construction. Then, statistical methods can be used to validate whether the observed variations align with the predetermined limits. The tool Great Expectations provides a feature for setting data variation thresholds in order to monitor data quality.</li>
+                                        <li><b>Deterministic Replay:</b> This approach involves managing and identifying variables contributing to non-determinism, thus providing better control during test execution.  </li>
                                         <li><b><a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> Chaos Engineering </a>:</b> In order to check results consistency, experiment repeated tests run application tests under non-deterministic variables like out-of-order messages and network and data volume oscillation.</li>
                                         <li><b>Consider Typical Bugs Related to Non-Determinism:</b> Watch out for typical non-determinism bugs, such as race conditions, ordering issues, state inconsistencies, lost, duplicate or delayed messages, and timeout-associated bugs.</li>
+                                        <li><b>DSP platforms provide features to deal with some aspects of non-determinism:</b> First, event time processing and watermarks manage out-of-order and late-arriving data, allowing the treatment of issues arising from delays in messages caused by oscillations caused by non-deterministic factors. Second, state management and exactly-once-processing semantics maintain consistency in processing.</li>
                                       
 
                                     </ol>                            
@@ -880,16 +927,16 @@ a.tips:hover {
 
                                     <div id="fault-tolerance-content" class="inbox-content-g7"   style="display: none; padding: 10px;"  >
                                         <div>
-                                            <img src="img/fault-tolerant-design.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
+                                            <img src="img/fault-tolerant-design.png" alt="-" style="float: left; margin-right: 40px; width: 128px; height: 128px;">
                                            <p>DSP applications run uninterruptedly 24/7 operations valuable to the companies' businesses. Therefore, this application must keep running in adverse conditions with disaster recovery capabilities to self-recuperate from crashes. In addition to application construction failures, such as a bug resulting from a programming error, we should also be concerned with failures arising from glitches and interruptions or oscillations of computational resources, networks and third-party services. For an application to be fault tolerant, it is necessary to build tolerance mechanisms. Such mechanisms involve first the autonomous ability to identify failures when they occur or predict failures about to emerge and then the action to prevent or reverse failures.</p>
 
                                             <p><a class="tips" data-bs-toggle="modal" data-bs-target="#chaos-modal"> Chaos engineering </a> plays a significant role in testing fault tolerance and system recoverability. It involves subjecting the DSP application to a controlled set of abnormal scenarios and verifying whether the system can restore checkpoints and resume regular functionality. Tools like the Thundra, Chaos Monkey and WireMock allow injecting errors, network oscillations, randomly terminating service, and simulating a range of possible failures to assess their impact. This process provides valuable insights for improving fault tolerance and recovery mechanisms by identifying potential weaknesses in the system. Below are some fault tolerance strategies that can be adopted in the context of DSP.</p>
                                         </div>
                                         <ol type="1" fontWeight="bold">
-                                            <li><b>Infrastructure redundancy:</b> This strategy involves having redundant backup servers, ready to take over in the event of primary server failure. This strategy may be financially costly, and budget availability must be evaluated.</li>
+                                            <li><b>Infrastructure redundancy:</b> This strategy involves having redundant backup servers ready to take over in the event of primary server failure. DSP platforms often provide easy-to-use integrated replica features. However, this strategy may be financially costly, and budget availability must be evaluated. Furthermore, the number of replicas increases system latency due to synchronisation overhead.</li>
 
 
-                                            <li><b>Scalability of hardware or network resources:</b> Upon detecting an increase in demand, adjust resources to keep the service running within specified performance requirements. Elastic scalability is a feature of cloud infrastructures that performs this task. This mitigation action must consider the strategy for allocating financial resources.</li>
+                                            <li><b>Scalability of hardware or network resources:</b> Upon detecting an increase in demand, adjust resources to keep the service running within specified performance requirements. Elastic scalability is a feature of cloud infrastructures that performs this task. This mitigation action must consider the strategy for allocating financial resources. To scale up a broker cluster horizontally, consider the scaling capabilities of other services like APIs, consumers and producers to ensure that real-time processing is not affected.</li>
 
                                             <li><b>Service redundancy:</b> This strategy involves having alternatives for backup services that are automatically activated when a third-party service fails. For example, backup providers can easily replace SMS, encryption, and freight calculation services if they become unavailable.</li>
 
@@ -897,9 +944,12 @@ a.tips:hover {
 
                                             <li><b>Version rollback:</b> In the face of unstable behaviour or failures after the release of a new version, a mechanism for easy version update rollback is recommended to quickly contain problems in the production environment.</li>
 
-                                            <li><b>Operations rollback:</b> when an operation has been delivering incorrect results due to a bug for some time. First, it is necessary to identify the period in which the incorrect results were delivered to reprocess them with a backup infrastructure. In addition, issues related to legal aspects and the business context must be evaluated, as reprocessing operations a posteriori can be useless or harmful. For example, credit card companies attend legal procedures for reversing and correcting incorrect charges.</li>
+                                            <li><b>Operations rollback:</b>  when an operation has been delivering incorrect results due to a bug for some time. First, it is necessary to identify the period when incorrect results were delivered to reprocess them with a backup infrastructure. In addition, issues related to legal aspects and the business context must be evaluated, as reprocessing operations a posteriori can be useless or harmful. For example, credit card companies attend legal procedures for reversing and correcting incorrect charges.</li>
 
-                                            <li><b>Contracts compatibility:</b> Large and complex DSP applications can have complex data schema with many message contracts. Updates can cause contract incompatibilities, especially if many modules interact and several teams promote changes in these modules and third-party services. Mitigation involves maintaining backward compatibility with contracts until contract updates propagate. Among the solutions in this context, we mention Avro, which supports compatibility for evolving contracts over time.</li>
+                                            <li><b>Contracts compatibility:</b>  Large and complex DSP applications can have complex data schema with many message contracts. Updates can cause contract incompatibilities, especially if many modules interact and several teams promote changes in these modules and third-party services. Mitigation involves maintaining backward compatibility with contracts until contract updates propagate. Among the solutions in this context, we mention Avro, which supports compatibility for evolving contracts over time. </li>
+
+                                            <li><b>Fault Tolerance Tools: </b>  Chaos Monkey, developed by Netflix, is acknowledged for introducing random infrastructure failures. WireMock can simulate faults in HTTP-based services like APIs by mocking responses. Jepsen performs black box testing and fault injection on unmodified distributed data management systems. Thundra provides error injection capabilities, allowing for a more controlled testing environment where specific failure modes can be simulated and analysed.  </li>
+                                            <li><b>Data Loss Strategy: </b> In addition to the traditional mechanisms provided by DSP platforms to prevent data loss, another solution consists of synchronizing all incoming messages in a data lake. However, this approach might not be suitable for high-volume and intensive data scenarios. </li>
                                           
 
                                         </ol>                            
@@ -921,7 +971,7 @@ a.tips:hover {
                             <p> The application of these guidelines is versatile, allowing adjustments based on participants' expertise and specific project requirements. They can serve as a sequential guide or reference for targeted queries. Below, we provide a simplified example to illustrate their practical use. Inspired by a real-world case, this scenario showcases the development of a test plan, adhering to the guideline flow from #G1 through #G7.</p>
 
                             <div class="details" id="example-detail"  style="display: none;">
-                            <img src="img/scooter2.png" alt="Descrição da imagem" style="float: left; margin-right: 40px; width: 400px; height: 400px;">                       
+                            <img src="img/scooter2.png" alt="-" style="float: left; margin-right: 40px; width: 400px; height: 400px;">                       
                             <h3>Colleting Information</h3>
 
                             <p>We started planning the testing strategy with <a href="#G1" class="internal-link expand-detail-link" data-target="G7-detail">#G1</a>, which drives the information-gathering phase to understand the application's business context and identify important information for testing efforts.</p>
@@ -1064,6 +1114,30 @@ a.tips:hover {
                     </div>
 
 
+                    <div class="modal fade" id="extra-#G1-D" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Chaos Engineering </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Chaos Engineering tests the robustness of complex systems by asking a simple question: "Can we trust the systems we deploy?" In distributed systems, this method is a way to measure how a system performs under real-world conditions. Large-scale DSP systems are prime candidates for this testing with their intricate setups and many potential failure points. Big companies, including Netflix, use chaos engineering to test their systems.</p>
+
+                            <p>Failures in DSP are inevitable. Instead of aiming for perfect reliability, chaos engineering focuses on preparing systems for when things go wrong—test applications for infrastructure failures before these issues crop up in production to prevent major damage. As chaos engineering is still consolidating, you may know associated terms like fault injection testing, stability testing, or stress testing.</p>
+
+                            <p>Chaos engineering in DSP aims to improve system reliability. It emphasizes fault tolerance and recoverability. One common approach is to test DSP applications under unusual conditions to see how well they recover. These tests span both software and network layers, considering factors like latency and throughput that can impact DSP timing.</p>
+
+                            <p>The testing also extends to hardware. Challenges include shutting down machines, simulating memory errors, and dealing with CPU or storage issues. There's also the risk of third-party service failures, underscoring the importance of building a resilient system. Tools like Chaos Monkey, Jepsen, and Thundra help practitioners develop these tests. </p>
+
+                            <p>Chaos engineering in DSP can also optimize fault tolerance configurations, finding the right balance between system performance and availability, considering issues like network problems, hardware or software failures, and timing challenges.</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+
 
 
                     <!-- Modal Copy Right-->
@@ -1083,7 +1157,7 @@ a.tips:hover {
 
                             <p><strong>Authorship and Attribution:</strong> This content is a culmination of doctoral research conducted at <a href="https://portal.cin.ufpe.br/" target="_blank">CIn/UFPE</a>. <a href="https://www.linkedin.com/in/alexandre-vianna-38184358/" target="_blank">Alexandre Strapação Guedes Vianna</a> is the primary author, with <a href="https://www.linkedin.com/in/kievgama/" target="_blank">Kiev Santos da Gama</a> serving as the co-author in his capacity as the doctoral advisor.</p>
 
-                            <p ><strong>Research Base:</strong> These guidelines are grounded in two primary studies: 
+                            <p ><strong>Research Base:</strong> These guidelines are grounded in two studies: 
                             <ul>
                                 <li style="text-align: left;">Vianna, A., Kamei, F. K., Gama, K., Zimmerle, C., & Neto, J. A. (2023). A Grey Literature Review on Data Stream Processing applications testing. Journal of Systems and Software, 111744. <a href="https://doi.org/10.1016/j.jss.2023.111744" target="_blank">https://doi.org/10.1016/j.jss.2023.111744</a></li>
                                 <li style="text-align: left;">Vianna, A., Ferreira, W., & Gama, K. (2019, September). An exploratory study of how specialists deal with testing in data stream processing applications. In 2019 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (pp. 1-6). IEEE. <a href="https://doi.org/10.1109/ESEM.2019.8870186" target="_blank">https://doi.org/10.1109/ESEM.2019.8870186</a></li>
